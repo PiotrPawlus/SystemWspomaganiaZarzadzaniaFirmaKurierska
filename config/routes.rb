@@ -1,5 +1,54 @@
 Rails.application.routes.draw do
+  get 'courier/index'
 
+  get 'courier/new'
+
+  get 'courier/create'
+
+  get 'courier/edit'
+
+  get 'courier/update'
+
+  get 'courier/show'
+
+  get 'courier/destroy'
+
+  get 'dipatcher_office/index'
+
+  get 'dipatcher_office/new'
+
+  get 'dipatcher_office/create'
+
+  get 'dipatcher_office/edit'
+
+  get 'dipatcher_office/update'
+
+  get 'dipatcher_office/show'
+
+  get 'dipatcher_office/destroy'
+
+  get 'warehouse/index'
+
+  get 'warehouse/new'
+
+  get 'warehouse/create'
+
+  get 'warehouse/edit'
+
+  get 'warehouse/update'
+
+  get 'warehouse/show'
+
+  get 'warehouse/destroy'
+
+  get 'users/index'
+  get 'users/new'
+  get 'users/create'
+  get 'users/edit'
+  get 'users/update'
+  get 'users/show'
+  get 'users/destroy'
+  get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
