@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'courier/index'
+
+  get 'courier/new'
+
+  get 'courier/create'
+
+  get 'courier/edit'
+
+  get 'courier/update'
+
+  get 'courier/show'
+
+  get 'courier/destroy'
+
   get 'dipatcher_office/index'
 
   get 'dipatcher_office/new'
