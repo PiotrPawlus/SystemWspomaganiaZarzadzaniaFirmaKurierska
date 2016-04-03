@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'couriers/index'
+
+  get 'couriers/new'
+
+  get 'couriers/create'
+
+  get 'couriers/edit'
+
+  get 'couriers/update'
+
+  get 'couriers/show'
+
+  get 'couriers/destroy'
+
   get 'dipsathers_office/index'
 
   get 'dipsathers_office/new'
