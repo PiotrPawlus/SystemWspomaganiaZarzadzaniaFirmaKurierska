@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'packages/index'
+
+  get 'packages/new'
+
+  get 'packages/create'
+
+  get 'packages/edit'
+
+  get 'packages/update'
+
+  get 'packages/show'
+
+  get 'packages/destroy'
+
   get 'orders/index'
 
   get 'orders/new'
