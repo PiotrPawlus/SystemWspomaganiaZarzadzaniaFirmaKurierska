@@ -41,19 +41,19 @@ Rails.application.routes.draw do
 
   get 'couriers/destroy'
 
-  get 'dipsathers_office/index'
+  get 'dispathers_office/index'
 
-  get 'dipsathers_office/new'
+  get 'dispathers_office/new'
 
-  get 'dipsathers_office/create'
+  get 'dispathers_office/create'
 
-  get 'dipsathers_office/edit'
+  get 'dispathers_office/edit'
 
-  get 'dipsathers_office/update'
+  get 'dispathers_office/update'
 
-  get 'dipsathers_office/show'
+  get 'dispathers_office/show'
 
-  get 'dipsathers_office/destroy'
+  get 'dispathers_office/destroy'
 
   get 'warehouses/index'
 

@@ -1,4 +1,4 @@
-class DipsathersOfficeController < ApplicationController
+class DispathersOfficeController < ApplicationController
   def index
   end
 
