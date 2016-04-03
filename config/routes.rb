@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'dipatcher_office/index'
+
+  get 'dipatcher_office/new'
+
+  get 'dipatcher_office/create'
+
+  get 'dipatcher_office/edit'
+
+  get 'dipatcher_office/update'
+
+  get 'dipatcher_office/show'
+
+  get 'dipatcher_office/destroy'
+
   get 'warehous/index'
 
   get 'warehous/new'
