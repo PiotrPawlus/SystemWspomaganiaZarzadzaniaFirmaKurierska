@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'warehouses/index'
+
+  get 'warehouses/new'
+
+  get 'warehouses/create'
+
+  get 'warehouses/edit'
+
+  get 'warehouses/update'
+
+  get 'warehouses/show'
+
+  get 'warehouses/destory'
+
   get 'users/index'
 
   get 'users/new'
