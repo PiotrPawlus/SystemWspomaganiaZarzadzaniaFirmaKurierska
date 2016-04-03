@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   get 'warehouses/index'
 
   get 'warehouses/new'
