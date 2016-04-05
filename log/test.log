@@ -177,3 +177,25 @@ PackageTest: test_the_truth
 PackageTest: test_the_truth
 ---------------------------
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------
+PackageTest: test_hes_a_valid_factory
+-------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-05 17:52:06.251374"], ["updated_at", "2016-04-05 17:52:06.251374"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-05 17:56:48.147391"], ["updated_at", "2016-04-05 17:56:48.147391"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
