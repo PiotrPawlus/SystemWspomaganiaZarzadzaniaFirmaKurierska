@@ -139,3 +139,6 @@
   [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160404154739')[0m
   [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160405050954')
   [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (9.2ms)[0m  ALTER TABLE "clients" DISABLE TRIGGER ALL;ALTER TABLE "couriers" DISABLE TRIGGER ALL;ALTER TABLE "dispatcher_offices" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "packages" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "warehouses" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "clients" ENABLE TRIGGER ALL;ALTER TABLE "couriers" ENABLE TRIGGER ALL;ALTER TABLE "dispatcher_offices" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "packages" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "warehouses" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
