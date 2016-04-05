@@ -3,4 +3,5 @@ class Order < ActiveRecord::Base
   belongs_to :warehouse
   belongs_to :dispatcher_office
   belongs_to :courier
+  belongs_to :client
 end

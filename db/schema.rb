@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404154739) do
+ActiveRecord::Schema.define(version: 20160405051313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "email",           limit: 70,  null: false
+    t.string   "password_digest"
+    t.string   "name",            limit: 80,  null: false
+    t.string   "surname",         limit: 100, null: false
+    t.string   "phone",           limit: 15,  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "couriers", force: :cascade do |t|
     t.string   "precinct",   limit: 250, null: false
@@ -39,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160404154739) do
     t.integer  "warehouse_id"
     t.integer  "dispatcher_office_id"
     t.integer  "courier_id"
+    t.integer  "client_id"
   end
 
   add_index "orders", ["order_number"], name: "index_orders_on_order_number", using: :btree
