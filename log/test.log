@@ -107,3 +107,35 @@
   [1m[36m (0.2ms)[0m  [1mALTER TABLE "couriers" ENABLE TRIGGER ALL;ALTER TABLE "dispatcher_offices" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "packages" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "warehouses" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
   [1m[35m (0.4ms)[0m  ALTER TABLE "couriers" DISABLE TRIGGER ALL;ALTER TABLE "dispatcher_offices" DISABLE TRIGGER ALL;ALTER TABLE "orders" DISABLE TRIGGER ALL;ALTER TABLE "packages" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "warehouses" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
   [1m[36m (0.2ms)[0m  [1mALTER TABLE "couriers" ENABLE TRIGGER ALL;ALTER TABLE "dispatcher_offices" ENABLE TRIGGER ALL;ALTER TABLE "orders" ENABLE TRIGGER ALL;ALTER TABLE "packages" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "warehouses" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (136.3ms)[0m  [1mDROP DATABASE IF EXISTS "SWZFK_test"[0m
+  [1m[35m (463.2ms)[0m  CREATE DATABASE "SWZFK_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (15.4ms)[0m  CREATE TABLE "clients" ("id" serial primary key, "email" character varying(70) NOT NULL, "password_digest" character varying, "name" character varying(80) NOT NULL, "surname" character varying(100) NOT NULL, "phone" character varying(15) NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "couriers" ("id" serial primary key, "precinct" character varying(250) NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.4ms)[0m  CREATE TABLE "dispatcher_offices" ("id" serial primary key, "name" character varying(100) NOT NULL, "address" character varying(150) NOT NULL, "capacity" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "order_number" integer NOT NULL, "status" character varying(80) NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "package_id" integer, "warehouse_id" integer, "dispatcher_office_id" integer, "courier_id" integer, "client_id" integer) [0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_orders_on_order_number" ON "orders" USING btree ("order_number")
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "packages" ("id" serial primary key, "weight" float NOT NULL, "size_X" float NOT NULL, "size_Y" float NOT NULL, "size_Z" float NOT NULL, "delivery_address" character varying(150) NOT NULL, "sender_address" character varying(150) NOT NULL, "actual_place" character varying(100) NOT NULL, "phone" character varying(15) NOT NULL, "cost" float NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (24.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying, "password_digest" character varying, "name" character varying(50) NOT NULL, "surname" character varying(50) NOT NULL, "birth_date" date NOT NULL, "position" character varying(100) NOT NULL, "is_admin" boolean DEFAULT 'f' NOT NULL, "is_dispather" boolean, "is_courier" boolean, "is_warehouse" boolean, "is_client" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "warehouse_id" integer, "dispatcher_office_id" integer, "courier_id" integer) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "warehouses" ("id" serial primary key, "name" character varying(50) NOT NULL, "address" character varying(100) NOT NULL, "capacity" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160405051313')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160403183836')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160403184029')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160403184104')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160403184131')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160403184203')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160403184559')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160404150321')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160404152941')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160404153507')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160404153941')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160404154302')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160404154540')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160404154739')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160405050954')
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
