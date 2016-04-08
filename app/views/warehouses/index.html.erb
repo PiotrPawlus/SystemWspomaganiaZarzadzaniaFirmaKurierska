@@ -23,8 +23,8 @@
         <th><%= warehouse.created_at %></th>
         <th><%= warehouse.updated_at %></th>
         <th>
-          <%= link_to("Edycja", {:action => '#'}, :class=>"")%>
-          <%= link_to("Usuń", {:action => '#'}, :class=>"")%>
+          <%= link_to("Edycja", {:action => 'edit', :id => warehouse.id}, :class=>"")%>
+          <%= link_to("Usuń", {:action => ''}, :class=>"")%>
         </th>
       </tr>
     <% end %>
