@@ -18,9 +18,16 @@ class WarehousesController < ApplicationController
   end
 
   def edit
+    @warehouse = Warehouse.find(params[:id])
   end
 
   def update
+    @warehouse = Warehouse.find(params[:id])
+    if @warehouse.update_attributes(warehouse_parameters)
+      redirect_to(:action=>'index')
+    else
+      render('edit')
+    end
   end
 
   def show
