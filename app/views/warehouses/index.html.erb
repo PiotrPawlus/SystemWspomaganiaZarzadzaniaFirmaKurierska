@@ -1,2 +1,32 @@
-<h1>Warehouses#index</h1>
-<p>Find me in app/views/warehouses/index.html.erb</p>
+<div class="">
+  <h1>Magazyny</h1>
+  <p>
+    Ilość: <%= @warehouses.size %>
+  </p>
+  <%= link_to("Nowy magazyn", {:controller => 'warehouses_controller', :action => 'new'}, :class=>"")%>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nazwa</th>
+      <th>Adres</th>
+      <th>Pojemność</th>
+      <th>Utworzono</th>
+      <th>Aktualizowano</th>
+      <th>Akcja</th>
+    </tr>
+    <% @warehouses.each do |warehouse|%>
+      <tr>
+        <th><%= warehouse.id %></th>
+        <th><%= warehouse.name %></th>
+        <th><%= warehouse.address %></th>
+        <th><%= warehosue.created_at %></th>
+        <th><%= warehosue.updated_at %></th>
+        <th>
+          <%= link_to("Edycja", {:action => '#', :id => warehosue.id}, :class=>"btn btn-xs btn-primary")%><br><br>
+          <%= link_to("Usuń", {:action => '#', :id => warehosue.id}, :class=>"btn btn-xs btn-primary")%><br><br>
+        </th>
+      </tr>
+    <% end %>
+  </table>
+
+</div>
