@@ -17,7 +17,7 @@ class Warehouse < ActiveRecord::Base
   validates :house_number,
           length: { minimum: 1, maximum: 10, :message => "Numer domu dla magazynu musi zawierać od 1 do 10 znaków."}
 
-  validates :local_nuber,
+  validates :local_number,
           length: { minimum: 1, maximum: 10, :message => "Numer lokalu dla magazynu musi zawierać od 1 do 10 znaków."}
 
   validates :postcode,

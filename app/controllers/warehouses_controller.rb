@@ -45,6 +45,6 @@ class WarehousesController < ApplicationController
   end
 
   def warehouse_parameters
-    params.require(:warehouse).permit(:name, :address, :capacity)
+    params.require(:warehouse).permit(:name, :city, :street, :house_number, :local_number, :postcode, :capacity)
   end
 end
