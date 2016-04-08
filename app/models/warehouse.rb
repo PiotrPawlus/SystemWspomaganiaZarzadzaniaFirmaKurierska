@@ -18,10 +18,10 @@ class Warehouse < ActiveRecord::Base
           length: { minimum: 1, maximum: 10, :message => "Numer domu dla magazynu musi zawierać od 1 do 10 znaków."}
 
   validates :local_number,
-          length: { minimum: 1, maximum: 10, :message => "Numer lokalu dla magazynu musi zawierać od 1 do 10 znaków."}
+          length: { minimum: 0, maximum: 10, :message => "Numer lokalu dla magazynu musi zawierać od 0 do 10 znaków."}
 
   validates :postcode,
-          length: { minimum: 1, maximum: 10, :message => "Numer domu dla magazynu musi zawierać od 1 do 10 znaków."}
+          length: { minimum: 1, maximum: 10, :message => "Kod pocztowy dla magazynu musi zawierać od 1 do 10 znaków."}
 
   validates :capacity,
           numericality: { only_integer: true }

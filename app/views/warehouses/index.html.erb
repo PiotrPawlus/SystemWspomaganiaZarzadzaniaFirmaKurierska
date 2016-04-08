@@ -18,7 +18,13 @@
       <tr>
         <th><%= warehouse.id %></th>
         <th><%= warehouse.name %></th>
-        <th><%= warehouse.address %></th>
+        <% if warehouse.local_number.present? %>
+          <th><%= warehouse.city %>, <%= warehouse.street %><br>
+             <%= warehouse.house_number%>/<%=warehouse.local_number%> <%= warehouse.postcode %></th>
+        <% else %>
+          <th><%= warehouse.city %>, <%= warehouse.street %><br>
+           <%= warehouse.house_number%> <%= warehouse.postcode %></th>
+        <% end %>
         <th><%= warehouse.capacity %></th>
         <th><%= warehouse.created_at %></th>
         <th><%= warehouse.updated_at %></th>
