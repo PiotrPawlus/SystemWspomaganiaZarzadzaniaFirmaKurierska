@@ -37,6 +37,12 @@ class WarehousesController < ApplicationController
   end
 
   def destory
+    @warehouse = Warehouse.find(params[:id])
+  end
+
+  def drop
+    warehouse = Warehouse.find(params[:id]).destroy
+    redirect_to(:action => 'index')
   end
 
   def warehouse_parameters
