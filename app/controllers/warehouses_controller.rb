@@ -12,7 +12,6 @@ class WarehousesController < ApplicationController
     if @new_warehouse.save
       redirect_to(:controller => 'warehouses', :action=>'index')
     else
-      flash[:notice] = "Niepoprawnie wypełnione pola"
       render('new')
     end
   end

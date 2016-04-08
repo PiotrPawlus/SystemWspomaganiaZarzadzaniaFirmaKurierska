@@ -5858,3 +5858,116 @@ Processing by WarehousesController#create as HTML
   Rendered warehouses/_form.html.erb (0.7ms)
   Rendered warehouses/new.html.erb within layouts/application (4.2ms)
 Completed 200 OK in 62ms (Views: 46.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/warehouses/create" for ::1 at 2016-04-08 21:10:38 +0200
+Processing by WarehousesController#create as HTML
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: warehouse):
+  app/controllers/warehouses_controller.rb:50:in `warehouse_parameters'
+  app/controllers/warehouses_controller.rb:11:in `create'
+
+
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.1ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (47.3ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (102.1ms)
+
+
+Started POST "/warehouses/create" for ::1 at 2016-04-08 21:11:10 +0200
+Processing by WarehousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x7J/AH+ig3rUnSL5TOFN7D7XfwMculNZcWTziJXIfuEl50Z0XY/4vH0rTNQpDTnEgOnefKWtty6hotKRxu2uwA==", "warehouse"=>{"name"=>"", "address"=>"", "capacity"=>""}, "commit"=>"Dodaj"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered warehouses/_form.html.erb (0.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 43ms (Views: 32.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/warehouses/create" for ::1 at 2016-04-08 21:11:11 +0200
+Processing by WarehousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6iml6ojarbv0vl8hzMtL++G8vVNlPV5uvixGFTzyw4EIfJyeqvfWfV0IMQypJz/TX4IcLNwquhlu6mcMb9cToA==", "warehouse"=>{"name"=>"", "address"=>"", "capacity"=>""}, "commit"=>"Dodaj"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered warehouses/_form.html.erb (0.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/warehouses/create" for ::1 at 2016-04-08 21:11:12 +0200
+Processing by WarehousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WH6M15RPF+P2YHOGU9zwPBWqFXNiaF1z6WPgoDjOwy26K7WjtmJsJV/WHas2MIQUq5S0DNt/uQQ5pcG5a+sTDA==", "warehouse"=>{"name"=>"", "address"=>"", "capacity"=>""}, "commit"=>"Dodaj"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered warehouses/_form.html.erb (0.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 55ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/warehouses/index" for ::1 at 2016-04-08 21:11:14 +0200
+Processing by WarehousesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36mWarehouse Load (0.2ms)[0m  [1mSELECT "warehouses".* FROM "warehouses"[0m
+  Rendered warehouses/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/warehouses/show?id=1" for ::1 at 2016-04-08 21:11:15 +0200
+Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered warehouses/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/warehouses/edit?id=5" for ::1 at 2016-04-08 21:11:17 +0200
+Processing by WarehousesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mWarehouse Load (0.2ms)[0m  [1mSELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered warehouses/_form.html.erb (0.6ms)
+  Rendered warehouses/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/warehouses/update?id=5" for ::1 at 2016-04-08 21:11:20 +0200
+Processing by WarehousesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fsUsskkY8Zp4fzDyuQ7rAsZ9YQNzmffIiun3gtquYfOckBXGazWKXNHJXt/c4p8qeEPAfMqOE79aL9abiYux0g==", "warehouse"=>{"name"=>"Magazy Drugi", "address"=>"konopnickiej 20", "capacity"=>"150"}, "commit"=>"Edytuj", "id"=>"5"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/warehouses/index
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/warehouses/index" for ::1 at 2016-04-08 21:11:20 +0200
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/warehouses/new" for ::1 at 2016-04-08 21:11:22 +0200
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (0.5ms)
+  Rendered warehouses/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/warehouses/create" for ::1 at 2016-04-08 21:11:25 +0200
+Processing by WarehousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Z9ZD+A/mGd+2cW7UjJvs9Zi8gDH2iv5rXSSPGKICI8TymB7whLjoddvq5Y33hubaFxTf37Nz459srMlMa3Yrg==", "warehouse"=>{"name"=>"de", "address"=>"", "capacity"=>""}, "commit"=>"Dodaj"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered warehouses/_form.html.erb (0.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.2ms)
