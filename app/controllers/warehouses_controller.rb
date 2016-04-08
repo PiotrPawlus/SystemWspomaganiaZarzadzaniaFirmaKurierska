@@ -31,6 +31,9 @@ class WarehousesController < ApplicationController
   end
 
   def show
+    @warehouse = Warehouse.find(params[:id])
+    # Wyciągnąć wszystkie zamówienia dla warehouse_id
+    # W widoku wyciągnąć wszystkie paczki dla danego magazynu
   end
 
   def destory
