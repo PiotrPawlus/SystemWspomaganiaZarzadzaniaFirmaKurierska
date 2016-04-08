@@ -3,7 +3,7 @@
   <p>
     Ilość: <%= @warehouses.size %>
   </p>
-  <%= link_to("Nowy magazyn", {:controller => 'warehouses_controller', :action => 'new'}, :class=>"")%>
+  <%= link_to("Nowy magazyn", {:controller => 'warehouses', :action => 'new'}, :class=>"")%>
   <table>
     <tr>
       <th>ID</th>
@@ -12,18 +12,19 @@
       <th>Pojemność</th>
       <th>Utworzono</th>
       <th>Aktualizowano</th>
-      <th>Akcja</th>
+      <th>Akcje</th>
     </tr>
     <% @warehouses.each do |warehouse|%>
       <tr>
         <th><%= warehouse.id %></th>
         <th><%= warehouse.name %></th>
         <th><%= warehouse.address %></th>
-        <th><%= warehosue.created_at %></th>
-        <th><%= warehosue.updated_at %></th>
+        <th><%= warehouse.capacity %></th>
+        <th><%= warehouse.created_at %></th>
+        <th><%= warehouse.updated_at %></th>
         <th>
-          <%= link_to("Edycja", {:action => '#', :id => warehosue.id}, :class=>"btn btn-xs btn-primary")%><br><br>
-          <%= link_to("Usuń", {:action => '#', :id => warehosue.id}, :class=>"btn btn-xs btn-primary")%><br><br>
+          <%= link_to("Edycja", {:action => '#'}, :class=>"")%>
+          <%= link_to("Usuń", {:action => '#'}, :class=>"")%>
         </th>
       </tr>
     <% end %>
