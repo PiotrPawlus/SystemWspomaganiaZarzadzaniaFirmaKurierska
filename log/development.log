@@ -5971,3 +5971,11 @@ Processing by WarehousesController#create as HTML
   Rendered warehouses/_form.html.erb (0.4ms)
   Rendered warehouses/new.html.erb within layouts/application (2.2ms)
 Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/warehouses/index" for ::1 at 2016-04-08 21:12:51 +0200
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 1.9ms)
