@@ -5710,3 +5710,151 @@ Processing by WarehousesController#show as HTML
   [1m[36mWarehouse Load (0.2ms)[0m  [1mSELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1[0m  [["id", 5]]
   Rendered warehouses/show.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/warehouses/new" for ::1 at 2016-04-08 21:08:09 +0200
+Processing by WarehousesController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/piotrpawlus/Developer/Ruby/Rails/SWZFK/app/models/warehouse.rb:10: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :address,
+             ^
+/Users/piotrpawlus/Developer/Ruby/Rails/SWZFK/app/models/warehouse.rb:11: syntax error, unexpected ',', expecting keyword_end
+/Users/piotrpawlus/Developer/Ruby/Rails/SWZFK/app/models/warehouse.rb:17: syntax error, unexpected keyword_end):
+  app/models/warehouse.rb:10: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  app/models/warehouse.rb:11: syntax error, unexpected ',', expecting keyword_end
+  app/models/warehouse.rb:17: syntax error, unexpected keyword_end
+  app/controllers/warehouses_controller.rb:7:in `new'
+
+
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.2ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.9ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (100.1ms)
+
+
+Started GET "/warehouses/new" for ::1 at 2016-04-08 21:08:09 +0200
+Processing by WarehousesController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/piotrpawlus/Developer/Ruby/Rails/SWZFK/app/models/warehouse.rb:10: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  validates :address,
+             ^
+/Users/piotrpawlus/Developer/Ruby/Rails/SWZFK/app/models/warehouse.rb:11: syntax error, unexpected ',', expecting keyword_end
+/Users/piotrpawlus/Developer/Ruby/Rails/SWZFK/app/models/warehouse.rb:17: syntax error, unexpected keyword_end):
+  app/models/warehouse.rb:10: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  app/models/warehouse.rb:11: syntax error, unexpected ',', expecting keyword_end
+  app/models/warehouse.rb:17: syntax error, unexpected keyword_end
+  app/controllers/warehouses_controller.rb:7:in `new'
+
+
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.7ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.9ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/piotrpawlus/.rvm/gems/ruby-2.2.4/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.4ms)
+
+
+Started GET "/warehouses/new" for ::1 at 2016-04-08 21:08:44 +0200
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (0.6ms)
+  Rendered warehouses/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 53ms (Views: 45.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/couriers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/dispathers_office.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/packages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/warehouses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/couriers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/dispathers_office.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/packages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-08 21:08:44 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-08 21:08:45 +0200
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-08 21:08:45 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-08 21:08:45 +0200
+
+
+Started POST "/warehouses/create" for ::1 at 2016-04-08 21:08:47 +0200
+Processing by WarehousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x7J/AH+ig3rUnSL5TOFN7D7XfwMculNZcWTziJXIfuEl50Z0XY/4vH0rTNQpDTnEgOnefKWtty6hotKRxu2uwA==", "warehouse"=>{"name"=>"", "address"=>"", "capacity"=>""}, "commit"=>"Dodaj"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered warehouses/_form.html.erb (0.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 54ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/warehouses/create" for ::1 at 2016-04-08 21:08:57 +0200
+Processing by WarehousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OBTBA+J1owTO+irmSf5v/NGkE+tkbI1PGg64e+MNq03aQfh3wFjYwmdMRMssEhvUb5qylN17aTjKyJlisCh7bA==", "warehouse"=>{"name"=>"rtest", "address"=>"", "capacity"=>"2"}, "commit"=>"Dodaj"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered warehouses/_form.html.erb (0.7ms)
+  Rendered warehouses/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 62ms (Views: 46.8ms | ActiveRecord: 2.0ms)
