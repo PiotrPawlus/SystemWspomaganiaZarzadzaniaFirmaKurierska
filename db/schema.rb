@@ -33,11 +33,15 @@ ActiveRecord::Schema.define(version: 20160405051313) do
   end
 
   create_table "dispatcher_offices", force: :cascade do |t|
-    t.string   "name",       limit: 100, null: false
-    t.string   "address",    limit: 150, null: false
-    t.integer  "capacity",               null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",         limit: 100, null: false
+    t.string   "city",         limit: 50,  null: false
+    t.string   "street",       limit: 50,  null: false
+    t.string   "house_number", limit: 10,  null: false
+    t.string   "local_nuber",  limit: 10
+    t.string   "postcode",     limit: 10,  null: false
+    t.integer  "capacity",                 null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -90,11 +94,15 @@ ActiveRecord::Schema.define(version: 20160405051313) do
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
   create_table "warehouses", force: :cascade do |t|
-    t.string   "name",       limit: 50,  null: false
-    t.string   "address",    limit: 100, null: false
-    t.integer  "capacity",               null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",         limit: 50, null: false
+    t.string   "city",         limit: 50, null: false
+    t.string   "street",       limit: 50, null: false
+    t.string   "house_number", limit: 10, null: false
+    t.string   "local_nuber",  limit: 10
+    t.string   "postcode",     limit: 10, null: false
+    t.integer  "capacity",                null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end
