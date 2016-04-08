@@ -5,7 +5,7 @@
   <%= form_for(:warehouse, :url => {:action => "update", :id => @warehouse.id}) do |field|%>
     <%= render(:partial => "form", :locals => {:field => field})%>
     <div >
-      <%= submit_tag("Dodaj") %>
+      <%= submit_tag("Edytuj") %>
     </div>
   <% end %>
 </div>

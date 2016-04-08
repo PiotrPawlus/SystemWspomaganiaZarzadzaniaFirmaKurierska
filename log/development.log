@@ -4907,3 +4907,12 @@ Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-08 20:42:55 +0200
+
+
+Started GET "/warehouses/edit?id=5" for ::1 at 2016-04-08 20:43:55 +0200
+Processing by WarehousesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mWarehouse Load (0.1ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered warehouses/_form.html.erb (0.5ms)
+  Rendered warehouses/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 39ms (Views: 31.0ms | ActiveRecord: 1.5ms)
