@@ -1,2 +1,11 @@
-<h1>Warehouses#new</h1>
-<p>Find me in app/views/warehouses/new.html.erb</p>
+<div class="">
+  <h1>Dodaj nowy magazyn</h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+  <%= form_for(:warehouse, :url => {:action => "create"}) do |field|%>
+    <%= render(:partial => "form", :locals => {:field => field})%>
+    <div >
+      <%= submit_tag("Dodaj") %>
+    </div>
+  <% end %>
+</div>

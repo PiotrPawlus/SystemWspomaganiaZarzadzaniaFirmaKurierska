@@ -1,2 +1,14 @@
-<h1>Warehouses#destory</h1>
-<p>Find me in app/views/warehouses/destory.html.erb</p>
+<div class="">
+  <h1>Usuwanie magazynu</h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+
+  <%= form_for(:warehouse, :url => {:action => "drop", :id => @warehouse.id}) do |field|%>
+  <p>Czy napewno chcesz usunąć dany magazyn <b><%=@warehouse.name%></b>?</p>
+  <p>
+    Naciśnięcie "Usuń" spowoduje nieodwracalne zmiany.
+  </p>
+
+    <%= submit_tag("Usuń") %>
+  <% end %>
+</div>
