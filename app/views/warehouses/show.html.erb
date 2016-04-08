@@ -1,8 +1,14 @@
 <h1>Warehouses</h1>
 <h3><%= @warehouse.name %></h3>
-<p>
-  Adres magazynu: <%= @warehouse.address %>
-</p>
+<% if @warehouse.local_number.present? %>
+  <p>
+    Adres magazynu: <%= @warehouse.city %>,  <%= @warehouse.street %>  <%= @warehouse.house_number %>/<%= @warehouse.local_number %>  <%= @warehouse.postcode %>
+  </p>
+<% else %>
+  <p>
+    Adres magazynu: <%= @warehouse.city %>,  <%= @warehouse.street %>  <%= @warehouse.house_number %> <%= @warehouse.postcode %>
+  </p>
+<% end %>
 <p>
   Pojemność magazynu: <%= @warehouse.capacity %>
 </p>
