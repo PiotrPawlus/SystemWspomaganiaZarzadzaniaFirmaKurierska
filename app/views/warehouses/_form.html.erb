@@ -4,8 +4,24 @@
     <td> <%= field.text_field(:name)%></td>
   </tr>
   <tr>
-    <th> <%= field.label(:address, "Adres: ")%> </th>
-    <td> <%= field.text_field(:address)%></td>
+    <th> <%= field.label(:city, "Miasto: ")%> </th>
+    <td> <%= field.text_field(:city)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:street, "Ulica: ")%> </th>
+    <td> <%= field.text_field(:street)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:house_number, "Numer domu: ")%> </th>
+    <td> <%= field.text_field(:house_number)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:local_number, "Adres mieszkania: ")%> </th>
+    <td> <%= field.text_field(:local_number)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:postcode, "Kod pocztowy: ")%> </th>
+    <td> <%= field.text_field(:postcode)%></td>
   </tr>
   <tr>
     <th> <%= field.label(:capacity, "Pojemność: ")%> </th>
