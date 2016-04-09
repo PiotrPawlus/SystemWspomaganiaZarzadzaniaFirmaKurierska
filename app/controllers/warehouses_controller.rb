@@ -35,7 +35,7 @@ class WarehousesController < ApplicationController
     # W widoku wyciągnąć wszystkie paczki dla danego magazynu
   end
 
-  def destory
+  def destroy
     @warehouse = Warehouse.find(params[:id])
   end
 

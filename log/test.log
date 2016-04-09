@@ -1670,3 +1670,1935 @@ PackageTest: test_the_count_of_packages
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "packages"
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:11:06.377785"], ["updated_at", "2016-04-09 06:11:06.377785"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 245ms (Views: 229.8ms | ActiveRecord: 1.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:06.732794"], ["updated_at", "2016-04-09 06:11:06.732794"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:06.736446"], ["updated_at", "2016-04-09 06:11:06.736446"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:06.746269"], ["updated_at", "2016-04-09 06:11:06.746269"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:18.023948"], ["updated_at", "2016-04-09 06:11:18.023948"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:18.043419"], ["updated_at", "2016-04-09 06:11:18.043419"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:18.049904"], ["updated_at", "2016-04-09 06:11:18.049904"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:11:18.087075"], ["updated_at", "2016-04-09 06:11:18.087075"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_show
+----------------------------------------------
+Processing by WarehousesController#show as HTML
+  [1m[36mWarehouse Load (0.4ms)[0m  [1mSELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 39ms (ActiveRecord: 7.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------
+WarehousesControllerTest: test_should_get_create
+------------------------------------------------
+Processing by WarehousesController#create as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------------
+WarehousesControllerTest: test_should_get_destory
+-------------------------------------------------
+Processing by WarehousesController#destory as HTML
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (13.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 202ms (Views: 196.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.4ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------
+WarehousesControllerTest: test_should_get_update
+------------------------------------------------
+Processing by WarehousesController#update as HTML
+  [1m[36mWarehouse Load (0.3ms)[0m  [1mSELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------
+WarehousesControllerTest: test_should_get_edit
+----------------------------------------------
+Processing by WarehousesController#edit as HTML
+  [1m[35mWarehouse Load (0.1ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:48.688998"], ["updated_at", "2016-04-09 06:11:48.688998"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:48.695939"], ["updated_at", "2016-04-09 06:11:48.695939"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:11:48.714485"], ["updated_at", "2016-04-09 06:11:48.714485"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:11:48.737933"], ["updated_at", "2016-04-09 06:11:48.737933"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (2.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:13:09.186174"], ["updated_at", "2016-04-09 06:13:09.186174"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:13:09.197807"], ["updated_at", "2016-04-09 06:13:09.197807"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:13:09.216240"], ["updated_at", "2016-04-09 06:13:09.216240"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 168ms (Views: 167.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:13:09.474316"], ["updated_at", "2016-04-09 06:13:09.474316"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:19:54.505181"], ["updated_at", "2016-04-09 06:19:54.505181"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (2.3ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:19:54.549369"], ["updated_at", "2016-04-09 06:19:54.549369"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:19:54.580061"], ["updated_at", "2016-04-09 06:19:54.580061"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:19:54.583945"], ["updated_at", "2016-04-09 06:19:54.583945"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 162ms (Views: 161.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (7.1ms)
+  Rendered warehouses/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:20:04.316618"], ["updated_at", "2016-04-09 06:20:04.316618"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.1ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 179ms (Views: 164.6ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:04.591864"], ["updated_at", "2016-04-09 06:20:04.591864"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:04.609278"], ["updated_at", "2016-04-09 06:20:04.609278"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:04.613615"], ["updated_at", "2016-04-09 06:20:04.613615"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:16.043925"], ["updated_at", "2016-04-09 06:20:16.043925"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:16.065423"], ["updated_at", "2016-04-09 06:20:16.065423"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.9ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:16.083572"], ["updated_at", "2016-04-09 06:20:16.083572"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 171ms (Views: 170.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------
+WarehousesControllerTest: test_should_get_create
+------------------------------------------------
+Processing by WarehousesController#create as HTML
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (8.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:20:16.357653"], ["updated_at", "2016-04-09 06:20:16.357653"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_edit
+----------------------------------------------
+Processing by WarehousesController#edit as HTML
+  [1m[36mWarehouse Load (0.3ms)[0m  [1mSELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 25ms (ActiveRecord: 6.8ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36mWarehouse Load (0.8ms)[0m  [1mSELECT "warehouses".* FROM "warehouses"[0m
+  Rendered warehouses/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 176ms (Views: 174.7ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (9.0ms)
+  Rendered warehouses/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 26ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:20:28.387377"], ["updated_at", "2016-04-09 06:20:28.387377"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "packages"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:28.403739"], ["updated_at", "2016-04-09 06:20:28.403739"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:28.420389"], ["updated_at", "2016-04-09 06:20:28.420389"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:20:28.430322"], ["updated_at", "2016-04-09 06:20:28.430322"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:22:22.342497"], ["updated_at", "2016-04-09 06:22:22.342497"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:22:22.370154"], ["updated_at", "2016-04-09 06:22:22.370154"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:22:22.406755"], ["updated_at", "2016-04-09 06:22:22.406755"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:22:22.420393"], ["updated_at", "2016-04-09 06:22:22.420393"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:22:22.474429"], ["updated_at", "2016-04-09 06:22:22.474429"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 160ms (Views: 159.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (10.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:22:47.072789"], ["updated_at", "2016-04-09 06:22:47.072789"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:22:47.100541"], ["updated_at", "2016-04-09 06:22:47.100541"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:22:47.106650"], ["updated_at", "2016-04-09 06:22:47.106650"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (2.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:22:47.189708"], ["updated_at", "2016-04-09 06:22:47.189708"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"68"}
+  [1m[35mWarehouse Load (7.8ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 68]]
+  Rendered warehouses/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 177ms (Views: 163.0ms | ActiveRecord: 7.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.3ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (7.4ms)
+  Rendered warehouses/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:22:47.416279"], ["updated_at", "2016-04-09 06:22:47.416279"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 189ms (Views: 180.2ms | ActiveRecord: 1.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:23:39.393546"], ["updated_at", "2016-04-09 06:23:39.393546"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#edit as HTML
+  Parameters: {"id"=>"69"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 69]]
+  Rendered warehouses/_form.html.erb (7.4ms)
+  Rendered warehouses/edit.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 28ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (0.9ms)
+  Rendered warehouses/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_show
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:23:39.436452"], ["updated_at", "2016-04-09 06:23:39.436452"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"70"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 70]]
+  Rendered warehouses/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:23:39.459299"], ["updated_at", "2016-04-09 06:23:39.459299"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:23:39.472786"], ["updated_at", "2016-04-09 06:23:39.472786"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:23:39.477658"], ["updated_at", "2016-04-09 06:23:39.477658"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:23:39.497372"], ["updated_at", "2016-04-09 06:23:39.497372"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:24:32.121046"], ["updated_at", "2016-04-09 06:24:32.121046"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:24:32.142686"], ["updated_at", "2016-04-09 06:24:32.142686"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:24:32.156860"], ["updated_at", "2016-04-09 06:24:32.156860"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_show
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:24:32.219484"], ["updated_at", "2016-04-09 06:24:32.219484"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 77]]
+  Rendered warehouses/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 171ms (Views: 165.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:24:32.399580"], ["updated_at", "2016-04-09 06:24:32.399580"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#edit as HTML
+  Parameters: {"id"=>"78"}
+  [1m[35mWarehouse Load (0.3ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 78]]
+  Rendered warehouses/_form.html.erb (8.6ms)
+  Rendered warehouses/edit.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (1.0ms)
+  Rendered warehouses/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+WarehousesControllerTest: test_should_get_destory
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:24:32.439240"], ["updated_at", "2016-04-09 06:24:32.439240"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:24:32.477761"], ["updated_at", "2016-04-09 06:24:32.477761"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "packages"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-09 06:25:34.370731"], ["updated_at", "2016-04-09 06:25:34.370731"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "packages"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:25:34.416275"], ["updated_at", "2016-04-09 06:25:34.416275"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:25:34.426030"], ["updated_at", "2016-04-09 06:25:34.426030"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:25:34.437251"], ["updated_at", "2016-04-09 06:25:34.437251"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "warehouses"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+WarehousesControllerTest: test_should_get_destroy
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:25:34.502380"], ["updated_at", "2016-04-09 06:25:34.502380"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#destroy as HTML
+  Parameters: {"id"=>"83"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 83]]
+  Rendered warehouses/destroy.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 170ms (Views: 164.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_show
+----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:25:34.680341"], ["updated_at", "2016-04-09 06:25:34.680341"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[35mWarehouse Load (0.3ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 84]]
+  Rendered warehouses/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-09 06:25:34.694392"], ["updated_at", "2016-04-09 06:25:34.694392"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#edit as HTML
+  Parameters: {"id"=>"85"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 85]]
+  Rendered warehouses/_form.html.erb (8.3ms)
+  Rendered warehouses/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.1ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (1.0ms)
+  Rendered warehouses/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
