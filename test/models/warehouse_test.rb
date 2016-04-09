@@ -8,12 +8,12 @@ class WarehouseTest < ActiveSupport::TestCase
 
   test "should save warehouse" do
     warehouse = build(:warehouse)
-    assert warehouse.save
+    assert warehouse.save, "Not saved the warehouse"
   end
 
   test "should not save warehouse without name" do
     warehouse = build(:warehouse, name: "")
-    assert_not warehouse.save
+    assert_not warehouse.save, "Saved the warehouse where name characters count less than 1"
   end
 
   test "should not save warehouse where name cout more than 50" do
