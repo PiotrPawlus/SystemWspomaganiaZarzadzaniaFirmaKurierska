@@ -12,9 +12,13 @@
    end
 
    factory :warehouse do
-     name       "magazynPierwszy"
-     address    "Kraków, Szlak 1"
-     capacity   1000
+     name         "magazynPierwszy"
+     city         "Kraków"
+     street       "Warszawska"
+     house_number "24"
+     local_number "2a"
+     postcode     "03-00"
+     capacity     1000
    end
 
  end
