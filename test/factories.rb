@@ -21,4 +21,8 @@
      capacity     1000
    end
 
+   factory :courier do
+     precinct     "Krowodrza Górka"
+   end
+
  end
