@@ -6247,3 +6247,257 @@ Processing by CouriersController#edit as HTML
   Rendered couriers/edit.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_postcode
+--------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------
+WarehouseTest: test_should_save_warehouse
+-----------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-10 18:54:07.792476"], ["updated_at", "2016-04-10 18:54:07.792476"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_house_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_name
+----------------------------------------------------------
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_city_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+WarehouseTest: test_the_count_of_warehouses
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-10 18:54:07.812507"], ["updated_at", "2016-04-10 18:54:07.812507"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_street
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_postcode_cout_more_than_10
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_house_number
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_capacity_is_not_number
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_without_city
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_name_cout_more_than_50
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+----------------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_local_number_cout_more_than_10
+----------------------------------------------------------------------------------
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+WarehouseTest: test_should_save_warehouse_without_local_number
+--------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", ""], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-10 18:54:07.841564"], ["updated_at", "2016-04-10 18:54:07.841564"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------------------------
+WarehouseTest: test_should_not_save_warehouse_where_street_cout_more_than_50
+----------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------
+CouriersControllerTest: test_should_get_new
+-------------------------------------------
+Processing by CouriersController#new as HTML
+  Rendered couriers/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 155ms (Views: 154.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------
+CouriersControllerTest: test_should_get_show
+--------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "couriers" ("precinct", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["precinct", "Krowodrza Górka"], ["created_at", "2016-04-10 18:54:08.069432"], ["updated_at", "2016-04-10 18:54:08.069432"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CouriersController#show as HTML
+  Parameters: {"id"=>"41"}
+  Rendered couriers/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+CouriersControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "couriers" ("precinct", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["precinct", "Krowodrza Górka"], ["created_at", "2016-04-10 18:54:08.077647"], ["updated_at", "2016-04-10 18:54:08.077647"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by CouriersController#edit as HTML
+  Parameters: {"id"=>"42"}
+  Rendered couriers/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+CouriersControllerTest: test_should_get_index
+---------------------------------------------
+Processing by CouriersController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "couriers"[0m
+  [1m[35mCourier Load (0.1ms)[0m  SELECT "couriers".* FROM "couriers"
+  Rendered couriers/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+CouriersControllerTest: test_should_get_destroy
+-----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "couriers" ("precinct", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["precinct", "Krowodrza Górka"], ["created_at", "2016-04-10 18:54:08.089685"], ["updated_at", "2016-04-10 18:54:08.089685"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by CouriersController#destroy as HTML
+  Parameters: {"id"=>"43"}
+  Rendered couriers/destroy.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------
+PackageTest: test_the_count_of_packages
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("weight", "size_X", "size_Y", "size_Z", "delivery_address", "sender_address", "actual_place", "phone", "cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["weight", 2.0], ["size_X", 0.5], ["size_Y", 0.5], ["size_Z", 0.5], ["delivery_address", "Warszawaska 24, Kraków"], ["sender_address", "Warszawaska 23, Kraków"], ["actual_place", "Magazyn główny - Pędzichów"], ["phone", "600700800"], ["cost", 17.99], ["created_at", "2016-04-10 18:54:08.110287"], ["updated_at", "2016-04-10 18:54:08.110287"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "packages"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-------------------------------------
+CourierTest: test_should_save_courier
+-------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "couriers" ("precinct", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["precinct", "Krowodrza Górka"], ["created_at", "2016-04-10 18:54:08.115095"], ["updated_at", "2016-04-10 18:54:08.115095"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+--------------------------------------------------
+CourierTest: test_should_not_save_too_long_precint
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------------------
+CourierTest: test_should_not_save_courier_to_short_precint
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_show
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-10 18:54:08.125343"], ["updated_at", "2016-04-10 18:54:08.125343"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"161"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 161]]
+  Rendered warehouses/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-----------------------------------------------
+WarehousesControllerTest: test_should_get_index
+-----------------------------------------------
+Processing by WarehousesController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "warehouses"[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT "warehouses".* FROM "warehouses"
+  Rendered warehouses/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------------
+WarehousesControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-10 18:54:08.154097"], ["updated_at", "2016-04-10 18:54:08.154097"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#edit as HTML
+  Parameters: {"id"=>"162"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 162]]
+  Rendered warehouses/_form.html.erb (31.3ms)
+  Rendered warehouses/edit.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------
+WarehousesControllerTest: test_should_get_destroy
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "warehouses" ("name", "city", "street", "house_number", "local_number", "postcode", "capacity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "magazynPierwszy"], ["city", "Kraków"], ["street", "Warszawska"], ["house_number", "24"], ["local_number", "2a"], ["postcode", "03-00"], ["capacity", 1000], ["created_at", "2016-04-10 18:54:08.200041"], ["updated_at", "2016-04-10 18:54:08.200041"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by WarehousesController#destroy as HTML
+  Parameters: {"id"=>"163"}
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT  "warehouses".* FROM "warehouses" WHERE "warehouses"."id" = $1 LIMIT 1  [["id", 163]]
+  Rendered warehouses/destroy.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+---------------------------------------------
+WarehousesControllerTest: test_should_get_new
+---------------------------------------------
+Processing by WarehousesController#new as HTML
+  Rendered warehouses/_form.html.erb (1.1ms)
+  Rendered warehouses/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
