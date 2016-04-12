@@ -7,6 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
+    @new_user = User.new(user_parameters)
+    if @new_user.save
+      redirect_to(:controller => 'users', :action=>'index')
+    else
+      render('new')
+    end
   end
 
   def edit
@@ -19,5 +25,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def user_parameters
+    params.require(:user).permit(:email, :password, :password_confirmation, :name, :surname, :birth_date, :position)
   end
 end

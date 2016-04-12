@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th> <%= field.label(:email, "Email:")%> </th>
+    <td> <%= field.text_field(:email)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:password, "Hasło: ")%> </th>
+    <td> <%= field.password_field(:password)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:password_confirmation, "Potwierdź hasło: ")%> </th>
+    <td> <%= field.password_field(:password_confirmation)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:name, "Imię:")%> </th>
+    <td> <%= field.text_field(:name)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:surname, "Nazwisko: ")%> </th>
+    <td> <%= field.text_field(:surname)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:birth_date, "Data urodzenia: ")%> </th>
+    <td> <%= field.date_select(:birth_date, order: [:day, :month, :year], start_year: 1900, end_year: 2016)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:position, "Wybierz stanowisko: ")%> </th>
+    <th> <%= field.select :position, options_for_select([['Administrator', '1'],['Dyspozytor', '2'],['Kurier', '3'],['Magazynier', '4']])%></th>
+  </tr>
+
+</table>
