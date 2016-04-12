@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160405051313) do
     t.string   "house_number", limit: 10,  null: false
     t.string   "local_number", limit: 10
     t.string   "postcode",     limit: 10,  null: false
-    t.integer  "capacity",                 null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
