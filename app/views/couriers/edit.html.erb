@@ -1,8 +1,9 @@
 <div class="">
-  <h1>Edytuj: <%= @courier.name %></h1>
+  <h1>Edytuj: <%= @courier.precinct %></h1>
 
   <%= link_to("Wróć", {:action => 'index'}) %>
   <%= form_for(:courier, :url => {:action => "update", :id => @courier.id}) do |field|%>
+
     <%= render(:partial => "form", :locals => {:field => field})%>
     <div >
       <%= submit_tag("Edytuj") %>
