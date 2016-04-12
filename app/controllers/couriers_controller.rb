@@ -35,6 +35,12 @@ class CouriersController < ApplicationController
   end
 
   def destroy
+    @courier = Courier.find(params[:id])
+  end
+
+  def drop
+    courier = Courier.find(params[:id]).destroy
+    redirect_to(:action => 'index')
   end
 
   def courier_parameters
