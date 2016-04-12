@@ -1,2 +1,11 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="">
+  <h1>Edytuj: <%= @user.name %></h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+  <%= form_for(:user, :url => {:action => "update", :id => @user.id}) do |field|%>
+    <%= render(:partial => "form", :locals => {:field => field})%>
+    <div >
+      <%= submit_tag("Edytuj") %>
+    </div>
+  <% end %>
+</div>
