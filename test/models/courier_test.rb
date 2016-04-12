@@ -13,8 +13,8 @@ class CourierTest < ActiveSupport::TestCase
   end
 
   test "should_not_save_too_long_precint" do
-    courier = build(:courier, precinct: "ObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObreb")
-    assert_not courier.save, "Saved curier with characters more than 100"
+    courier = build(:courier, precinct: "ObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObrebObreb")
+    assert_not courier.save, "Saved curier with characters more than 250"
   end
 
 end
