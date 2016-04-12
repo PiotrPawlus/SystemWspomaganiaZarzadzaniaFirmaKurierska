@@ -11128,3 +11128,100 @@ Processing by UsersController#index as HTML
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
   Rendered users/index.html.erb within layouts/application (9.8ms)
 Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2016-04-12 22:41:27 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 50ms (Views: 45.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/packages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/dispathers_office.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/couriers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/warehouses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/couriers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/dispathers_office.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/packages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-12 22:41:28 +0200
+
+
+Started GET "/users/edit?id=15" for 127.0.0.1 at 2016-04-12 22:41:30 +0200
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  Rendered users/_form.html.erb (5.1ms)
+  Rendered users/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 45ms (Views: 42.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/update?id=15" for 127.0.0.1 at 2016-04-12 22:41:37 +0200
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IORRVd0qOoxNZQ1Jbzz0rlBcS9TDjRPxjQtJnuOhhTi6q4Oqd+Qs4KJQUvA/kzGf6Sh3QG9dlrZ/zJe63gtFFA==", "user"=>{"email"=>"kkjnfrin", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"nj", "surname"=>"nj", "birth_date(3i)"=>"12", "birth_date(2i)"=>"4", "birth_date(1i)"=>"2016", "position"=>"Kurier"}, "commit"=>"Edytuj", "id"=>"15"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "email" = $1, "password_digest" = $2, "position" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["email", "kkjnfrin"], ["password_digest", "$2a$10$IoSyf/5Kvu9pF1YJTSUMf.R1HcTWZwU9u.8QQqzqELk.G/YF5xTca"], ["position", "Kurier"], ["updated_at", "2016-04-12 20:41:37.294350"], ["id", 15]]
+  [1m[36m (63.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/index
+Completed 302 Found in 143ms (ActiveRecord: 64.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2016-04-12 22:41:37 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.4ms)
