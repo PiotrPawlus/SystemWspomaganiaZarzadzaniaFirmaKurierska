@@ -37,6 +37,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def drop
+    user = User.find(params[:id]).destroy
+    redirect_to(:action => 'index')
+  end
+
   def user_parameters
     params.require(:user).permit(:email, :password, :password_confirmation, :name, :surname, :birth_date, :position)
   end
