@@ -30,6 +30,8 @@ class CouriersController < ApplicationController
   end
 
   def show
+    @courier = Courier.find(params[:id])
+    # Wyciągnąć wszystkie paczki dla danego klienta
   end
 
   def destroy
