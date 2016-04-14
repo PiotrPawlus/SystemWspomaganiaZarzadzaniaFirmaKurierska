@@ -1,2 +1,11 @@
-<h1>Clients#new</h1>
-<p>Find me in app/views/clients/new.html.erb</p>
+<div class="">
+  <h1>Dodaj nowego klienta </h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+  <%= form_for(:client, :url => {:action => "create"}) do |field|%>
+    <%= render(:partial => "form", :locals => {:field => field})%>
+    <div >
+      <%= submit_tag("Dodaj") %>
+    </div>
+  <% end %>
+</div>
