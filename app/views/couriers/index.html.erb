@@ -1,2 +1,30 @@
-<h1>Couriers#index</h1>
-<p>Find me in app/views/couriers/index.html.erb</p>
+<div class="">
+  <h1>Kurierzy</h1>
+  <p>
+    Ilość: <%= @couriers.size %>
+  </p>
+  <%= link_to("Nowy kurier", {:controller => 'couriers', :action => 'new'}, :class=>"")%>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Obwód</th>
+      <th>Utworzono</th>
+      <th>Aktualizowano</th>
+      <th>Akcje</th>
+    </tr>
+    <% @couriers.each do |courier|%>
+      <tr>
+        <th><%= courier.id %></th>
+        <th><%= courier.precinct %></th>
+        <th><%= courier.created_at %></th>
+        <th><%= courier.updated_at %></th>
+        <th>
+          <%= link_to("Pokaż", {:action => 'show', :id => courier.id}, :class=>"")%>
+          <%= link_to("Edycja", {:action => 'edit', :id => courier.id}, :class=>"")%>
+          <%= link_to("Usuń", {:action => 'destroy', :id => courier.id }, :class=>"")%>
+        </th>
+      </tr>
+    <% end %>
+  </table>
+
+</div>

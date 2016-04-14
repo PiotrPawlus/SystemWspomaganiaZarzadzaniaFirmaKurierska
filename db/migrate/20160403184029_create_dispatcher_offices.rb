@@ -7,7 +7,6 @@ class CreateDispatcherOffices < ActiveRecord::Migration
       t.string "house_number", :limit=>10, :null=>false
       t.string "local_number", :limit=>10
       t.string "postcode", :limit=>10, :null=>false
-      t.integer "capacity", :null=>false
       t.timestamps null: false
     end
   end
