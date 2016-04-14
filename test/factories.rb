@@ -26,7 +26,7 @@
    end
 
    factory :order do
-     order_number     1010101010101010
+     order_number     10101010
      status           "w dordze do klienta"
    end
 
