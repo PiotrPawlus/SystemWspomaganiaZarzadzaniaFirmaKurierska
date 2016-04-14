@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th> <%= field.label(:email, "Email:")%> </th>
+    <td> <%= field.email_field(:email)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:password, "Hasło: ")%> </th>
+    <td> <%= field.password_field(:password)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:password_confirmation, "Potwierdź hasło: ")%> </th>
+    <td> <%= field.password_field(:password_confirmation)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:name, "Imię:")%> </th>
+    <td> <%= field.text_field(:name)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:surname, "Nazwisko: ")%> </th>
+    <td> <%= field.text_field(:surname)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:phone, "Telefon: ")%> </th>
+    <td> <%= field.text_field(:phone)%></td>
+  </tr>
+
+</table>
