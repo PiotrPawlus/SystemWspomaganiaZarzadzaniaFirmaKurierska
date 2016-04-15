@@ -2,8 +2,8 @@ class Package < ActiveRecord::Base
   belongs_to :order
 
   validates :weight, :size_X, :size_Y, :size_Z,
-    :name_of_recipient, :surname_of_recipient, :city_delivery, :street_delivery, :house_number_delivery, :local_number_delivery, :postcode_delivery,
-    :city_sender, :street_sender, :house_number_sender, :local_number_sender, :postcode_sender, :actual_place, :phone_delivery, :phone_sender, :cost,
+    :name_of_recipient, :surname_of_recipient, :city_delivery, :street_delivery, :house_number_delivery, :postcode_delivery,
+    :city_sender, :street_sender, :house_number_sender, :postcode_sender, :actual_place, :phone_delivery, :phone_sender, :cost,
     presence: true
 
   validates :weight,
