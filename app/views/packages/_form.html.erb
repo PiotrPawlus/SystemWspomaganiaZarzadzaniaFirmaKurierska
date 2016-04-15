@@ -20,6 +20,14 @@
 <h4>Adres dostawy: </h4>
 <table>
   <tr>
+    <th> <%= field.label(:name_of_recipient, "Imie adresata:")%> </th>
+    <td> <%= field.text_field(:name_of_recipient)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:surname_of_recipient, "Nazwisko adresata:")%> </th>
+    <td> <%= field.text_field(:surname_of_recipient)%></td>
+  </tr>
+  <tr>
     <th> <%= field.label(:city_delivery, "Miasto:")%> </th>
     <td> <%= field.text_field(:city_delivery)%></td>
   </tr>
