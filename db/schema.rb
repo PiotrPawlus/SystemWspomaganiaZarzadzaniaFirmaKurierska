@@ -58,17 +58,27 @@ ActiveRecord::Schema.define(version: 20160405051313) do
   add_index "orders", ["order_number"], name: "index_orders_on_order_number", using: :btree
 
   create_table "packages", force: :cascade do |t|
-    t.float    "weight",                       null: false
-    t.float    "size_X",                       null: false
-    t.float    "size_Y",                       null: false
-    t.float    "size_Z",                       null: false
-    t.string   "delivery_address", limit: 150, null: false
-    t.string   "sender_address",   limit: 150, null: false
-    t.string   "actual_place",     limit: 100, null: false
-    t.string   "phone",            limit: 15,  null: false
-    t.float    "cost",                         null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.float    "weight",                            null: false
+    t.float    "size_X",                            null: false
+    t.float    "size_Y",                            null: false
+    t.float    "size_Z",                            null: false
+    t.string   "city_delivery",         limit: 50,  null: false
+    t.string   "street_delivery",       limit: 50,  null: false
+    t.string   "house_number_delivery", limit: 10,  null: false
+    t.string   "local_number_delivery", limit: 10
+    t.string   "postcode_delivery",     limit: 10,  null: false
+    t.string   "city_sender",           limit: 50,  null: false
+    t.string   "street_sender",         limit: 50,  null: false
+    t.string   "house_number_sender",   limit: 10,  null: false
+    t.string   "local_number_sender",   limit: 10
+    t.string   "postcode_sender",       limit: 10,  null: false
+    t.string   "actual_place",          limit: 100, null: false
+    t.string   "phone_delivery",        limit: 15,  null: false
+    t.string   "phone_sender",          limit: 15,  null: false
+    t.float    "cost",                              null: false
+    t.boolean  "paid",                              null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "users", force: :cascade do |t|
