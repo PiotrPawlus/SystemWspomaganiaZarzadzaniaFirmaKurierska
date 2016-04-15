@@ -1,12 +1,51 @@
-<h1>Paczka</h1>
-<th><%= @package.weight %></th>
-<th><%= @package.size_X %></th>
-<th><%= @package.size_Y %></th>
-<th><%= @package.size_Z %></th>
-<th><%= @package.delivery_address %></th>
-<th><%= @package.sender_address %></th>
-<th><%= @package.actual_place %></th>
-<th><%= @package.phone %></th>
-<th><%= @package.cost %></th>
-<th><%= @package.created_at %></th>
-<th><%= @package.updated_at %></th>
+<h2>Paczka nr: <%= @package.id %></h2>
+<h4>Informacje o paczce:</h4>
+<table>
+  <tr>
+    <th>Waga</th>
+    <th>Szerokość</th>
+    <th>Wysokość</th>
+    <th>Głębokość</th>
+  </tr>
+  <tr>
+    <td><%= @package.weight %></td>
+    <td><%= @package.size_X %></td>
+    <td><%= @package.size_Y %></td>
+    <td><%= @package.size_Z %></td>
+  </tr>
+</table>
+<h4>Informacje o odbiorcy:</h4>
+<table>
+  <tr>
+    <th>Miasto</th>
+    <th>Ulica</th>
+    <th>Numer budynku</th>
+    <th>Numer lokalu</th>
+    <th>Kod pocztowy</th>
+  </tr>
+  <tr>
+    <td><%= @package.city_delivery %></td>
+    <td><%= @package.street_delivery %></td>
+    <td><%= @package.house_number_delivery %></td>
+    <td><%= @package.local_number_delivery %></td>
+    <td><%= @package.postcode_delivery %></td>
+  </tr>
+</table>
+
+<h4>Informacje o nadawcy:</h4>
+<table>
+  <tr>
+    <th>Miasto</th>
+    <th>Ulica</th>
+    <th>Numer budynku</th>
+    <th>Numer lokalu</th>
+    <th>Kod pocztowy</th>
+  </tr>
+  <tr>
+    <td><%= @package.city_sender %></td>
+    <td><%= @package.street_sender %></td>
+    <td><%= @package.house_number_sender %></td>
+    <td><%= @package.local_number_sender %></td>
+    <td><%= @package.postcode_sender %></td>
+  </tr>
+</table>
