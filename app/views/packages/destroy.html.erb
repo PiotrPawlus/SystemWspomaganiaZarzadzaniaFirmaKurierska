@@ -1,2 +1,14 @@
-<h1>Packages#destroy</h1>
-<p>Find me in app/views/packages/destroy.html.erb</p>
+<div class="">
+  <h1>Usuwanie paczki</h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+
+  <%= form_for(:package, :url => {:action => "drop", :id => @package.id}) do |field|%>
+  <p>Czy napewno chcesz usunąć paczkę nr <b><%=@package.id%></b>?</p>
+  <p>
+    Naciśnięcie "Usuń" spowoduje nieodwracalne zmiany.
+  </p>
+
+    <%= submit_tag("Usuń") %>
+  <% end %>
+</div>
