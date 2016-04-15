@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 20160405051313) do
     t.string   "phone_delivery",        limit: 15,  null: false
     t.string   "phone_sender",          limit: 15,  null: false
     t.float    "cost",                              null: false
-    t.boolean  "paid",                              null: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
   end

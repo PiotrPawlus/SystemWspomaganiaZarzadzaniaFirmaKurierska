@@ -19,7 +19,6 @@ class CreatePackages < ActiveRecord::Migration
       t.string "phone_delivery", :limit=>15, :null=>false
       t.string "phone_sender", :limit=>15, :null=>false
       t.float "cost", :null=>false
-      t.boolean "paid", :null=>false
       t.timestamps null: false
     end
   end
