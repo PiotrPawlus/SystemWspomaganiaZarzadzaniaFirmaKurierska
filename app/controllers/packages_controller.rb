@@ -1,5 +1,6 @@
 class PackagesController < ApplicationController
   def index
+    @packages = Package.all
   end
 
   def new
@@ -28,6 +29,6 @@ class PackagesController < ApplicationController
   end
 
   def package_parameters
-    params.require(:client).permit(:weight, :size_X, :size_Y, :size_Z, :delivery_address, :sender_address, :actual_place, :phone, :cost)
+    params.require(:package).permit(:weight, :size_X, :size_Y, :size_Z, :delivery_address, :sender_address, :actual_place, :phone, :cost)
   end
 end
