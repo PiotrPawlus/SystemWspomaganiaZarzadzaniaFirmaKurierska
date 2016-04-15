@@ -1,2 +1,11 @@
-<h1>Packages#new</h1>
-<p>Find me in app/views/packages/new.html.erb</p>
+<div class="">
+  <h1>Dodaj nowej paczki </h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+  <%= form_for(:package, :url => {:action => "create"}) do |field|%>
+    <%= render(:partial => "form", :locals => {:field => field})%>
+    <div >
+      <%= submit_tag("Dodaj") %>
+    </div>
+  <% end %>
+</div>
