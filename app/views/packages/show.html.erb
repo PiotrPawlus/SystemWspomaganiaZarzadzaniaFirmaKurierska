@@ -17,6 +17,8 @@
 <h4>Informacje o odbiorcy:</h4>
 <table>
   <tr>
+    <th>Imie</th>
+    <th>Nazwisko</th>
     <th>Miasto</th>
     <th>Ulica</th>
     <th>Numer budynku</th>
@@ -24,6 +26,8 @@
     <th>Kod pocztowy</th>
   </tr>
   <tr>
+    <td><%= @package.name_of_recipient %></td>
+    <td><%= @package.surname_of_recipient %></td>
     <td><%= @package.city_delivery %></td>
     <td><%= @package.street_delivery %></td>
     <td><%= @package.house_number_delivery %></td>
