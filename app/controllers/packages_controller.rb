@@ -43,7 +43,7 @@ class PackagesController < ApplicationController
   end
 
   def package_parameters
-    params.require(:package).permit(:weight, :size_X, :size_Y, :size_Z,
+    params.require(:package).permit(:weight, :size_X, :size_Y, :size_Z, :name_of_recipient, :surname_of_recipient,
     :city_delivery, :street_delivery, :house_number_delivery, :local_number_delivery, :postcode_delivery,
     :city_sender, :street_sender, :house_number_sender, :local_number_sender, :postcode_sender,
     :actual_place, :phone_delivery, :phone_sender, :paid, :cost)
