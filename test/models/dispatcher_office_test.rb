@@ -47,9 +47,9 @@ class DispatcherOfficeTest < ActiveSupport::TestCase
     assert_not dispatcher_office.save, "Saved dispatcher offices with characters of house_number more than 10"
   end
 
-  test "should_not_save_dispatcher_office_without_local_number" do
+  test "should_save_dispatcher_office_without_local_number" do
     dispatcher_office = build(:dispatcher_office, local_number: "")
-    assert_not dispatcher_office.save, "Saved dispatcher offices with characters of local_number count zero"
+    assert dispatcher_office.save, "Not saved dispatcher offices with characters of local_number count zero"
   end
 
   test "should_not_save_dispatcher_office_with_too_long_local_number" do
