@@ -1,0 +1,38 @@
+<div class="">
+  <h1>Magazyny</h1>
+  <p>
+    Ilość: <%= @dispatchers.size %>
+  </p>
+  <%= link_to("Nowa dyspozytornia", {:controller => 'dispatchers_office', :action => 'new'}, :class=>"")%>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nazwa</th>
+      <th>Adres</th>
+      <th>Utworzono</th>
+      <th>Aktualizowano</th>
+      <th>Akcje</th>
+    </tr>
+    <% @dispatchers.each do |dispatcher|%>
+      <tr>
+        <th><%= dispatcher.id %></th>
+        <th><%= dispatcher.name %></th>
+        <% if dispatcher.local_number.present? %>
+          <th><%= dispatcher.city %>, <%= dispatcher.street %><br>
+             <%= dispatcher.house_number%>/<%=dispatcher.local_number%> <%= dispatcher.postcode %></th>
+        <% else %>
+          <th><%= dispatcher.city %>, <%= dispatcher.street %><br>
+           <%= dispatcher.house_number%> <%= dispatcher.postcode %></th>
+        <% end %>
+        <th><%= dispatcher.created_at %></th>
+        <th><%= dispatcher.updated_at %></th>
+        <th>
+          <%= link_to("Pokaż", {:action => 'show', :id => dispatcher.id}, :class=>"")%>
+          <%= link_to("Edycja", {:action => 'edit', :id => dispatcher.id}, :class=>"")%>
+          <%= link_to("Usuń", {:action => 'destroy', :id => dispatcher.id }, :class=>"")%>
+        </th>
+      </tr>
+    <% end %>
+  </table>
+
+</div>

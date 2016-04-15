@@ -1,0 +1,11 @@
+<div class="">
+  <h1>Edytuj: <%= @dispatcher_office.name %></h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+  <%= form_for(:dispatcher_office, :url => {:action => "update", :id => @dispatcher_office.id}) do |field|%>
+    <%= render(:partial => "form", :locals => {:field => field})%>
+    <div >
+      <%= submit_tag("Edytuj") %>
+    </div>
+  <% end %>
+</div>
