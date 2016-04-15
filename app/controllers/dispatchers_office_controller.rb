@@ -1,5 +1,6 @@
 class DispatchersOfficeController < ApplicationController
   def index
+    @dispatchers = DispatcherOffice.all
   end
 
   def new
