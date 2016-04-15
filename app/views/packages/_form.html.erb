@@ -1,3 +1,4 @@
+<h4>Informacje o Paczce: </h4>
 <table>
   <tr>
     <th> <%= field.label(:weight, "Waga:")%> </th>
@@ -15,25 +16,69 @@
     <th> <%= field.label(:size_Z, "Wysokość:")%> </th>
     <td> <%= field.text_field(:size_Z)%></td>
   </tr>
+</table>
+<h4>Adres dostawy: </h4>
+<table>
   <tr>
-    <th> <%= field.label(:delivery_address, "Adres dostawy:")%> </th>
-    <td> <%= field.text_field(:delivery_address)%></td>
+    <th> <%= field.label(:city_delivery, "Miasto:")%> </th>
+    <td> <%= field.text_field(:city_delivery)%></td>
   </tr>
   <tr>
-    <th> <%= field.label(:sender_address, "Adres wysyłającego:")%> </th>
-    <td> <%= field.text_field(:sender_address)%></td>
+    <th> <%= field.label(:street_delivery, "Ulica:")%> </th>
+    <td> <%= field.text_field(:street_delivery)%></td>
   </tr>
+  <tr>
+    <th> <%= field.label(:house_number_delivery, "Numer domu:")%> </th>
+    <td> <%= field.text_field(:house_number_delivery)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:local_number_delivery, "Numer lokalu:")%> </th>
+    <td> <%= field.text_field(:local_number_delivery)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:postcode_delivery, "Kod pocztowy:")%> </th>
+    <td> <%= field.text_field(:postcode_delivery)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:phone_delivery, "Telefon: ")%> </th>
+    <td> <%= field.text_field(:phone_delivery)%></td>
+  </tr>
+</table>
+<h4>Adres nadawcy: </h4>
+<table>
+  <tr>
+    <th> <%= field.label(:city_sender, "Miasto:")%> </th>
+    <td> <%= field.text_field(:city_sender)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:street_sender, "Ulica:")%> </th>
+    <td> <%= field.text_field(:street_sender)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:house_number_sender, "Numer domu:")%> </th>
+    <td> <%= field.text_field(:house_number_sender)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:local_number_sender, "Numer lokalu:")%> </th>
+    <td> <%= field.text_field(:local_number_sender)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:postcode_sender, "Kod pocztowy:")%> </th>
+    <td> <%= field.text_field(:postcode_sender)%></td>
+  </tr>
+  <tr>
+    <th> <%= field.label(:phone_sender, "Telefon: ")%> </th>
+    <td> <%= field.text_field(:phone_sender)%></td>
+  </tr>
+</table>
+<h5>Informacje</h5>
+<table>
   <tr>
     <th> <%= field.label(:actual_place, "Aktualny miejsce paczki:")%> </th>
     <td> <%= field.text_field(:actual_place)%></td>
   </tr>
   <tr>
-    <th> <%= field.label(:phone, "Telefon: ")%> </th>
-    <td> <%= field.text_field(:phone)%></td>
-  </tr>
-  <tr>
     <th> <%= field.label(:cost, "Koszt: ")%> </th>
     <td> <%= field.text_field(:cost)%></td>
   </tr>
-
 </table>
