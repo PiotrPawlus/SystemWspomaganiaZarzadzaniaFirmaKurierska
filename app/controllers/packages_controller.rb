@@ -17,9 +17,16 @@ class PackagesController < ApplicationController
   end
 
   def edit
+    @package = Package.find(params[:id])
   end
 
   def update
+    @package = Package.find(params[:id])
+    if @package.update_attributes(package_parameters)
+      redirect_to(:action => 'index')
+    else
+      render('edit')
+    end
   end
 
   def show

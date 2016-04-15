@@ -1,5 +1,5 @@
 <div class="">
-  <h1>Edytuj paczkę nr: <%= @package.ID %></h1>
+  <h1>Edytuj paczkę nr: <%= @package.id %></h1>
 
   <%= link_to("Wróć", {:action => 'index'}) %>
   <%= form_for(:package, :url => {:action => "update", :id => @package.id}) do |field|%>
