@@ -17,10 +17,18 @@ class DispatchersOfficeController < ApplicationController
   end
 
   def edit
+    @dispatcher_office = DispatcherOffice.find(params[:id])
   end
 
   def update
+    @dispatcher_office = DispatcherOffice.find(params[:id])
+    if @dispatcher_office.update_attributes(dispatcher_office_parameters)
+      redirect_to(:action => 'index')
+    else
+      render('edit')
+    end
   end
+
 
   def show
   end
