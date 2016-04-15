@@ -1,2 +1,13 @@
-<h1>DipsathersOffice#destroy</h1>
-<p>Find me in app/views/dipsathers_office/destroy.html.erb</p>
+<div class="">
+  <h1>Usuwanie dyspozytorni</h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+
+  <%= form_for(:warehouse, :url => {:action => "drop", :id => @dispatcher_office.id}) do |field|%>
+  <p>Czy napewno chcesz usunąć daną dyspozytornię <b><%=@dispatcher_office.name%></b>?</p>
+  <p>
+    Naciśnięcie "Usuń" spowoduje nieodwracalne zmiany.
+  </p>
+    <%= submit_tag("Usuń") %>
+  <% end %>
+</div>

@@ -35,6 +35,12 @@ class DispatchersOfficeController < ApplicationController
   end
 
   def destroy
+    @dispatcher_office = DispatcherOffice.find(params[:id])
+  end
+
+  def drop
+    warehouse = DispatcherOffice.find(params[:id]).destroy
+    redirect_to(:action => 'index')
   end
 
   def dispatcher_office_parameters
