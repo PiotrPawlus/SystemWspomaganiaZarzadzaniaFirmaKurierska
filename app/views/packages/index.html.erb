@@ -3,14 +3,9 @@
   <%= link_to("Dodaj paczkę", {:controller => 'packages', :action => 'new'})%>
   <table>
     <tr>
+      <th>ID</th>
       <th>Waga</th>
-      <th>Długość</th>
-      <th>Szerokość</th>
-      <th>Wysokość</th>
-      <th>Adres dostawy</th>
-      <th>Adres wysyłającego</th>
       <th>Aktualny miejsce paczki</th>
-      <th>Telefon</th>
       <th>Koszt</th>
       <th>Utworzono</th>
       <th>Aktualizowano</th>
@@ -18,14 +13,9 @@
     </tr>
     <% @packages.each do |package|%>
       <tr>
+        <th><%= package.id %></th>
         <th><%= package.weight %></th>
-        <th><%= package.size_X %></th>
-        <th><%= package.size_Y %></th>
-        <th><%= package.size_Z %></th>
-        <th><%= package.delivery_address %></th>
-        <th><%= package.sender_address %></th>
         <th><%= package.actual_place %></th>
-        <th><%= package.phone %></th>
         <th><%= package.cost %></th>
         <th><%= package.created_at %></th>
         <th><%= package.updated_at %></th>
