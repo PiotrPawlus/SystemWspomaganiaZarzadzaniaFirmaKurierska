@@ -4,7 +4,6 @@ class DispatchersOfficeControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:dispatcher_offices)
   end
 
   test "should get new" do
