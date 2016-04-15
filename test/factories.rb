@@ -25,4 +25,12 @@
      precinct     "Krowodrza Górka"
    end
 
+   factory :dispatcher_office do
+     name         "Biuro"
+     city         "Kraków"
+     street       "Warszawska"
+     house_number "24"
+     local_number "2b"
+     postcode     "30-000"
+   end
  end
