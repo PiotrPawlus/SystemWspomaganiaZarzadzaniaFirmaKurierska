@@ -5,6 +5,8 @@ class CreatePackages < ActiveRecord::Migration
       t.float "size_X", :null=>false
       t.float "size_Y", :null=>false
       t.float "size_Z", :null=>false
+      t.string "name_of_recipient", :limit=>50, :null=>false
+      t.string "surname_of_recipient", :limit=>50, :null=>false
       t.string "city_delivery", :limit=>50, :null=>false
       t.string "street_delivery", :limit=>50, :null=>false
       t.string "house_number_delivery", :limit=>10, :null=>false
