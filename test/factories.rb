@@ -1,16 +1,4 @@
  FactoryGirl.define do
-   factory :package do
-     weight           2.0
-     size_X           0.5
-     size_Y           0.5
-     size_Z           0.5
-     delivery_address "Warszawaska 24, Kraków"
-     sender_address   "Warszawaska 23, Kraków"
-     actual_place     "Magazyn główny - Pędzichów"
-     phone            "600700800"
-     cost             17.99
-   end
-
    factory :warehouse do
      name         "magazynPierwszy"
      city         "Kraków"
@@ -39,4 +27,26 @@
      status           "w dordze do klienta"
    end
 
+   factory :package do
+     weight                 2.4
+     size_X                 0.50
+     size_Y                 0.40
+     size_Z                 0.24
+     name_of_recipient      "Karol"
+     surname_of_recipient   "Tester"
+     city_delivery          "Rzeszów"
+     street_delivery        "al. pokoju"
+     house_number_delivery  "20"
+     local_number_delivery  "200c"
+     postcode_delivery      "38-200"
+     city_sender            "Krakow"
+     street_sender          "Czarnowiejska"
+     house_number_sender    "1"
+     local_number_sender    "b"
+     postcode_sender        "30-200"
+     actual_place           "W drodze"
+     phone_delivery         "600600600"
+     phone_sender           "500500500"
+     cost                   15.90
+   end
  end
