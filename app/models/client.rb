@@ -18,7 +18,8 @@ class Client < ActiveRecord::Base
           length: { minimum: 1, maximum: 50, :message => "Nazwisko musi zawierać od 1 do 50 znaków."}
 
   validates :phone,
-          phone: {possible: true, :message => "Zły numer telefonu"}
+          numericality: { only_integer: true },
+          length: { minimum: 7, maximum: 10, :message => "Zły numer telefonu"}
 
 
 

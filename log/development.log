@@ -16056,3 +16056,168 @@ Processing by ClientsController#index as HTML
   [1m[36mClient Load (0.4ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
   Rendered clients/index.html.erb within layouts/application (7.4ms)
 Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2016-04-15 17:12:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (70.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClientsController#new as HTML
+  Rendered clients/_form.html.erb (44.1ms)
+  Rendered clients/new.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 816ms (Views: 560.7ms | ActiveRecord: 196.8ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2016-04-15 17:15:19 +0200
+Processing by ClientsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/andrzej/Documents/Github/SystemWspomaganiaZarzadzaniaFirmaKurierska/app/models/client.rb:22: syntax error, unexpected ':', expecting keyword_end
+          length: { minimum: 7, maximum: 10, :...
+                 ^):
+  app/models/client.rb:22: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/clients_controller.rb:7:in `new'
+
+
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (43.4ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2016-04-15 17:15:20 +0200
+Processing by ClientsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/andrzej/Documents/Github/SystemWspomaganiaZarzadzaniaFirmaKurierska/app/models/client.rb:22: syntax error, unexpected ':', expecting keyword_end
+          length: { minimum: 7, maximum: 10, :...
+                 ^):
+  app/models/client.rb:22: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/clients_controller.rb:7:in `new'
+
+
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.8ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/andrzej/.rbenv/versions/2.2.4/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.6ms)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+Processing by ClientsController#new as HTML
+  Rendered clients/_form.html.erb (1.6ms)
+  Rendered clients/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 52ms (Views: 43.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/clients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/dispathers_office.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/orders.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/couriers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/packages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/warehouses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/clients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/couriers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/dispathers_office.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/orders.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/packages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started GET "/assets/warehouses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-15 17:15:38 +0200
+
+
+Started POST "/clients/create" for 127.0.0.1 at 2016-04-15 17:15:50 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GxnTQKkjcium4KSVp1uJEj/kvb+vBGqVsTWotN5UiR+BVgG/A+1kR0nV+yz39EwjhpCBKwPU79JD8naQ4/5JMw==", "client"=>{"email"=>"ko@ko", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"ko", "surname"=>"ko", "phone"=>"qwert"}, "commit"=>"Dodaj"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered clients/_form.html.erb (0.7ms)
+  Rendered clients/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 186ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/clients/create" for 127.0.0.1 at 2016-04-15 17:16:08 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjzptB0pUFV6uBabXsk1z1Ou37Dn0ddWZ0GfS4wU1oMkcztLt+dGOZWNSSIOZvD+6trjJEsBUhGVhkFvsb4Wrw==", "client"=>{"email"=>"ko@ko", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"kok", "surname"=>"mijd", "phone"=>"111111"}, "commit"=>"Dodaj"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered clients/_form.html.erb (0.6ms)
+  Rendered clients/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 99ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/clients/create" for 127.0.0.1 at 2016-04-15 17:16:21 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cf1qk6v2UZZEuAXpe4sng1uyp9OBjeShy3mP1UZBLoKTsrhsAThH+quNWlArJOKy4sabRy1dYeY5vlHxe+vurg==", "client"=>{"email"=>"ko@ko", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"ko", "surname"=>"ko", "phone"=>"12345678"}, "commit"=>"Dodaj"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (63.2ms)[0m  [1mINSERT INTO "clients" ("email", "password_digest", "name", "surname", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "ko@ko"], ["password_digest", "$2a$10$2n2qpMLXY/7h/bXEwTXCbeeX8fEQjS/tNVDnUh.dbS2Ou3h1R1Ou2"], ["name", "ko"], ["surname", "ko"], ["phone", "12345678"], ["created_at", "2016-04-15 15:16:21.479086"], ["updated_at", "2016-04-15 15:16:21.479086"]]
+  [1m[35m (10.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/clients/index
+Completed 302 Found in 212ms (ActiveRecord: 73.8ms)
+
+
+Started GET "/clients/index" for 127.0.0.1 at 2016-04-15 17:16:21 +0200
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.4ms)
