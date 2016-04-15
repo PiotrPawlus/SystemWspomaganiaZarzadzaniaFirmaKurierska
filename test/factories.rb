@@ -33,4 +33,10 @@
      local_number "2b"
      postcode     "30-000"
    end
+
+   factory :order do
+     order_number     10101010
+     status           "w dordze do klienta"
+   end
+
  end
