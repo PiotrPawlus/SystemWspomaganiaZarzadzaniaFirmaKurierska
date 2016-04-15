@@ -31,6 +31,7 @@ class DispatchersOfficeController < ApplicationController
 
 
   def show
+    @dispatcher_office = DispatcherOffice.find(params[:id])
   end
 
   def destroy

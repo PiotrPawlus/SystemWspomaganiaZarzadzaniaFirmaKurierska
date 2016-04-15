@@ -1,2 +1,11 @@
-<h1>DipsathersOffice#show</h1>
-<p>Find me in app/views/dipsathers_office/show.html.erb</p>
+<h1>Dispatcher Office</h1>
+<h3><%= @dispatcher_office.name %></h3>
+<% if @dispatcher_office.local_number.present? %>
+  <p>
+    Adres magazynu: <%= @dispatcher_office.city %>,  <%= @dispatcher_office.street %>  <%= @dispatcher_office.house_number %>/<%= @dispatcher_office.local_number %>  <%= @dispatcher_office.postcode %>
+  </p>
+<% else %>
+  <p>
+    Adres magazynu: <%= @dispatcher_office.city %>,  <%= @dispatcher_office.street %>  <%= @dispatcher_office.house_number %> <%= @dispatcher_office.postcode %>
+  </p>
+<% end %>
