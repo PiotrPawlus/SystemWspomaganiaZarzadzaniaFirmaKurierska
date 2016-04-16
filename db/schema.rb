@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20160405051313) do
     t.string   "status",               limit: 80, null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.integer  "package_id"
     t.integer  "warehouse_id"
     t.integer  "dispatcher_office_id"
     t.integer  "courier_id"
@@ -80,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160405051313) do
     t.float    "cost",                              null: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.integer  "order_id"
   end
 
   create_table "users", force: :cascade do |t|
