@@ -1,2 +1,40 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<div class="">
+  <h1>Orders</h1>
+  <p>
+    Amount: <%= @orders.size %>
+  </p>
+  <%= link_to("New order", {:controller => 'orders', :action => 'new'}, :class=>"")%>
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Status</th>
+      <th>Creation Date</th>
+      <th>Last update</th>
+      <th>Package</th>
+      <th>Warehouse</th>
+      <th>Dispatcher Office</th>
+      <th>Courier</th>
+      <th>Client</th>
+    </tr>
+    <% @orders.each do |order|%>
+      <tr>
+        <th><%= order.order_number %></th>
+        <th><%= order.status %></th>
+        <th><%= order.created_at %></th>
+        <th><%= order.update_at %></th>
+        <th><%= order.package_id %></th>
+        <th><%= order.warehouse_id %></th>
+        <th><%= order.dispatcher_office_id %></th>
+        <th><%= order.courier_id %></th>
+        <th><%= order.client_id %></th>
+        <th>
+          <%= link_to("Stwórz", {:action => 'create', :id => order.id}, :class=>"")%>
+          <%= link_to("Pokaż", {:action => 'show', :id => order.id}, :class=>"")%>
+          <%= link_to("Edycja", {:action => 'edit', :id => order.id}, :class=>"")%>
+          <%= link_to("Usuń", {:action => 'destroy', :id => order.id }, :class=>"")%>
+        </th>
+      </tr>
+    <% end %>
+  </table>
+
+</div>
