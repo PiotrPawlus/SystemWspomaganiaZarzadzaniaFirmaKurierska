@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160405051313) do
   end
 
   create_table "couriers", force: :cascade do |t|
+    t.string   "name",       limit: 50,  null: false
     t.string   "precinct",   limit: 250, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
