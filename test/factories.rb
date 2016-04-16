@@ -10,6 +10,7 @@
    end
 
    factory :courier do
+     name         "KurirowyTest"
      precinct     "Krowodrza Górka"
    end
 
