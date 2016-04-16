@@ -4,7 +4,7 @@
   <%= link_to("Wróć", {:action => 'index'}) %>
 
   <%= form_for(:order, :url => {:action => "drop", :id => @order.id}) do |field|%>
-  <p>Czy napewno chcesz usunąć zamówienie?</p>
+  <p>Czy napewno chcesz usunąć zamówienie <b><%= @order.order_number%></b>?</p>
   <p>
     Naciśnięcie "Usuń" spowoduje nieodwracalne zmiany"
   </p>
