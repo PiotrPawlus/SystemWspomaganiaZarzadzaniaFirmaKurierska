@@ -1,13 +1,14 @@
 <div class="">
-  <h1>Delete Order</h1>
+  <h1>Usuwanie zamówienia</h1>
 
   <%= link_to("Wróć", {:action => 'index'}) %>
 
   <%= form_for(:order, :url => {:action => "drop", :id => @order.id}) do |field|%>
-    <p>Do you really want to delete this order?</p>
-    <p>
-      Click on "Delete" make irreversible changes.
-    </p>
-    <%= submit_tag("Delete") %>
+  <p>Czy napewno chcesz usunąć zamówienie?</p>
+  <p>
+    Naciśnięcie "Usuń" spowoduje nieodwracalne zmiany"
+  </p>
+
+    <%= submit_tag("Usuń") %>
   <% end %>
 </div>
