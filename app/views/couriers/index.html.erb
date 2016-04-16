@@ -7,6 +7,7 @@
   <table>
     <tr>
       <th>ID</th>
+      <th>Nazwa</th>
       <th>Obwód</th>
       <th>Utworzono</th>
       <th>Aktualizowano</th>
@@ -15,6 +16,7 @@
     <% @couriers.each do |courier|%>
       <tr>
         <th><%= courier.id %></th>
+        <th><%= courier.name %></th>
         <th><%= courier.precinct %></th>
         <th><%= courier.created_at %></th>
         <th><%= courier.updated_at %></th>
