@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
   end
 
   def order_parameters
-    params.require(:order).permit(:order_number, :status, :package_id, :warehouse_id, :dispatcher_office_id, :courier_id, :client_id)
+    params.require(:order).permit(:order_number, :status)
   end
-  
+
 end
