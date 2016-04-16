@@ -7,19 +7,19 @@ class OrderTest < ActiveSupport::TestCase
     assert order.save, "Not saved the order"
   end
 
-  test "should_not_save_order_with_one_num_of_order_number" do
-    order = build(:order, order_number: 0)
-    assert_not order.save, "Too short order number. Should be 4 bit"
+  test "should_not_save_order_without_order_number" do
+    order = build(:order, order_number: "")
+    assert_not order.save, "Too short order number. Should be 16 characters"
   end
 
-  test "should_not_save_order_with_seven_num_of_order_number" do
-    order = build(:order, order_number: 1010101)
-    assert_not order.save, "Too short order number. Should be 4 bit"
+  test "should_not_save_order_with_fifteen_num_of_order_number" do
+    order = build(:order, order_number: "112211221122112")
+    assert_not order.save, "Too short order number. Should be 16 characters"
   end
 
-  test "should_not_save_order_with_more_than_nine_num_of_order_number" do
-    order = build(:order, order_number: 101010101)
-    assert_not order.save, "Too long order number. Should be 4 bit"
+  test "should_not_save_order_with_more_than_sixteen_num_of_order_number" do
+    order = build(:order, order_number: "11221122112211221")
+    assert_not order.save, "Too long order number. Should be 16 characters"
   end
 
 end
