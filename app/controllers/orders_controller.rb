@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @warehouses = Warehouse.all
+    @dispatcher_offices = DispatcherOffice.all
+    @couriers = Courier.all
+    @clients = Client.all
   end
 
   def create
@@ -18,6 +22,10 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    @warehouses = Warehouse.all
+    @dispatcher_offices = DispatcherOffice.all
+    @couriers = Courier.all
+    @clients = Client.all
   end
 
   def update
@@ -43,7 +51,7 @@ class OrdersController < ApplicationController
   end
 
   def order_parameters
-    params.require(:order).permit(:order_number, :status)
+    params.require(:order).permit(:order_number, :status, :warehouse_id, :dispatcher_office_id, :courier_id, :client_id)
   end
 
 end

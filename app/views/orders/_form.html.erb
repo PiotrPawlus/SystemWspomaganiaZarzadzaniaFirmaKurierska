@@ -7,4 +7,20 @@
    <th> <%= field.label(:status, "Status:")%> </th>
    <td> <%= field.text_field(:status)%></td>
  </tr>
+ <tr>
+   <th> <%= field.label(:warehouse_id, "Magazyn:")%> </th>
+   <td> <%= field.select(:warehouse_id, @warehouses.map{|t| [t.name, t.id]}, :class => 'form-control' )%></td>
+ </tr>
+ <tr>
+   <th> <%= field.label(:dispatcher_office_id, "Dyspozytornia:")%> </th>
+   <td> <%= field.select(:dispatcher_office_id, @dispatcher_offices.map{|t| [t.name, t.id]}, :class => 'form-control' )%></td>
+ </tr>
+ <tr>
+   <th> <%= field.label(:courier_id, "Kurier:")%> </th>
+   <td> <%= field.select(:courier_id, @couriers.map{|t| [t.precinct, t.id]}, :class => 'form-control' )%></td>
+ </tr>
+ <tr>
+   <th> <%= field.label(:client_id, "Klient:")%> </th>
+   <td> <%= field.select(:client_id, @clients.map{|t| [t.name, t.id]}, :class => 'form-control' )%></td>
+ </tr>
 </table>
