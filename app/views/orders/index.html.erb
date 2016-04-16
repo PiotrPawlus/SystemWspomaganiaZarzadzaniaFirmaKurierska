@@ -1,32 +1,33 @@
 <div class="">
-  <h1>Orders</h1>
+  <h1>Zamówienia</h1>
   <p>
-    Amount: <%= @orders.size %>
+    Ilość: <%= @orders.size %>
   </p>
-  <%= link_to("New order", {:controller => 'orders', :action => 'new'}, :class=>"")%>
+  <%= link_to("Nowe zamówienie", {:controller => 'orders', :action => 'new'}, :class=>"")%>
   <table>
     <tr>
       <th>ID</th>
-      <th>Number</th>
+      <th>Numer</th>
       <th>Status</th>
-      <th>Creation Date</th>
-      <th>Last update</th>
-      <th>Warehouse</th>
-      <th>Dispatcher Office</th>
-      <th>Courier</th>
-      <th>Client</th>
+      <th>Magazyn</th>
+      <th>Dyspozytornia</th>
+      <th>Kurier</th>
+      <th>Klient</th>
+      <th>Utworzono</th>
+      <th>Aktualizowano</th>
+      <th>Akcje</th>
     </tr>
     <% @orders.each do |order|%>
       <tr>
         <th><%= order.id %></th>
         <th><%= order.order_number %></th>
         <th><%= order.status %></th>
-        <th><%= order.created_at %></th>
-        <th><%= order.updated_at %></th>
         <th><%= order.warehouse_id %></th>
         <th><%= order.dispatcher_office_id %></th>
         <th><%= order.courier_id %></th>
         <th><%= order.client_id %></th>
+        <th><%= order.created_at %></th>
+        <th><%= order.updated_at %></th>
         <th>
           <%= link_to("Pokaż", {:action => 'show', :id => order.id}, :class=>"")%>
           <%= link_to("Edycja", {:action => 'edit', :id => order.id}, :class=>"")%>

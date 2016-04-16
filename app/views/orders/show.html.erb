@@ -1,10 +1,10 @@
-<h1>Orders</h1>
+<h1>Zamówienia</h1>
 <p>
-  Order number: <b><%= @order.order_number %><br></b>
+  Numer zamówienia: <b><%= @order.order_number %><br></b>
   Status: <b><%= @order.status %><br></b>
-  Warehouse ID: <b><%= @order.warehouse_id %><br></b>
-  Dispathcer Office Id: <b><%= @order.dispatcher_office_id %><br></b>
-  Courier ID: <b><%= @order.courier_id %><br></b>
-  Client ID: <b><%= @order.client_id %><br></b>
+  ID magazynu: <b><%= @order.warehouse_id %><br></b>
+  ID dyspozytorni: <b><%= @order.dispatcher_office_id %><br></b>
+  ID kuriera: <b><%= @order.courier_id %><br></b>
+  ID klienta: <b><%= @order.client_id %><br></b>
 </p>
 <%= link_to("Back", {:action => 'index'}) %>
