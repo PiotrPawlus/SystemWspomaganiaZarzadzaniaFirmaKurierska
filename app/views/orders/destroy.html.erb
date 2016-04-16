@@ -1,2 +1,13 @@
-<h1>Orders#destroy</h1>
-<p>Find me in app/views/orders/destroy.html.erb</p>
+<div class="">
+  <h1>Delete Order</h1>
+
+  <%= link_to("Wróć", {:action => 'index'}) %>
+
+  <%= form_for(:order, :url => {:action => "drop", :id => @order.id}) do |field|%>
+    <p>Do you really want to delete this order?</p>
+    <p>
+      Click on "Delete" make irreversible changes.
+    </p>
+    <%= submit_tag("Delete") %>
+  <% end %>
+</div>

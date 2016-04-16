@@ -1,2 +1,42 @@
-<h1>Orders#edit</h1>
-<p>Find me in app/views/orders/edit.html.erb</p>
+<div class="">
+  <h1>Edit: <%= @order.order_number %></h1>
+
+  <%= link_to("Back", {:action => 'index'}) %>
+  <%= form_for(:order, :url => {:action => "update", :id => @order.id}) do |field|%>
+
+<table>
+  <tr>
+    <th> <%= field.label(:order_number, "Order number:")%> </th>
+    <td> <%= field.text_field(:order_number)%></td>
+  </tr>
+   <tr>
+    <th> <%= field.label(:status, "Status:")%> </th>
+    <td> <%= field.text_field(:status)%></td>
+  </tr>	
+   <tr>
+    <th> <%= field.label(:package_id, "Package ID:")%> </th>
+    <td> <%= field.select(:package_id, 1..10)%></td>
+  </tr>
+   <tr>
+    <th> <%= field.label(:warehouse_id, "Warehouse ID:")%> </th>
+    <td> <%= field.select(:warehouse_id, 1..10)%></td>
+  </tr>
+    <tr>
+    <th> <%= field.label(:dispatcher_office_id, "Dispatcher Office Id:")%> </th>
+    <td> <%= field.select(:dispatcher_office_id, 1..10)%></td>
+  </tr>
+    <tr>
+    <th> <%= field.label(:courier_id, "Courier ID:")%> </th>
+    <td> <%= field.select(:courier_id, 1..10)%></td>
+  </tr>
+    <tr>
+    <th> <%= field.label(:client_id, "Client ID:")%> </th>
+    <td> <%= field.select(:client_id, 1..10)%></td>
+  </tr>
+</table>
+
+    <div >
+      <%= submit_tag("Save Changes") %>
+    </div>
+  <% end %>
+</div>

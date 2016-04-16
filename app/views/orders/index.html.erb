@@ -6,6 +6,7 @@
   <%= link_to("New order", {:controller => 'orders', :action => 'new'}, :class=>"")%>
   <table>
     <tr>
+      <th>ID</th>
       <th>Number</th>
       <th>Status</th>
       <th>Creation Date</th>
@@ -18,17 +19,17 @@
     </tr>
     <% @orders.each do |order|%>
       <tr>
+        <th><%= order.id %></th>
         <th><%= order.order_number %></th>
         <th><%= order.status %></th>
         <th><%= order.created_at %></th>
-        <th><%= order.update_at %></th>
+        <th><%= order.updated_at %></th>
         <th><%= order.package_id %></th>
         <th><%= order.warehouse_id %></th>
         <th><%= order.dispatcher_office_id %></th>
         <th><%= order.courier_id %></th>
         <th><%= order.client_id %></th>
         <th>
-          <%= link_to("Stwórz", {:action => 'create', :id => order.id}, :class=>"")%>
           <%= link_to("Pokaż", {:action => 'show', :id => order.id}, :class=>"")%>
           <%= link_to("Edycja", {:action => 'edit', :id => order.id}, :class=>"")%>
           <%= link_to("Usuń", {:action => 'destroy', :id => order.id }, :class=>"")%>

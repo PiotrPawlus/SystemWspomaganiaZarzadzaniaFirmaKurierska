@@ -1,2 +1,11 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<h1>Orders</h1>
+<p>
+  Order number: <b><%= @order.order_number %><br></b>
+  Status: <b><%= @order.status %><br></b>
+  Package ID: <b><%= @order.package_id %><br></b>
+  Warehouse ID: <b><%= @order.warehouse_id %><br></b>
+  Dispathcer Office Id: <b><%= @order.dispatcher_office_id %><br></b>
+  Courier ID: <b><%= @order.courier_id %><br></b>
+  Client ID: <b><%= @order.client_id %><br></b>
+</p>
+<%= link_to("Back", {:action => 'index'}) %>
