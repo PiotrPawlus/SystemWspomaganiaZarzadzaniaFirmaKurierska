@@ -44,7 +44,7 @@ class CouriersController < ApplicationController
   end
 
   def courier_parameters
-    params.require(:courier).permit(:precinct)
+    params.require(:courier).permit(:name, :precinct)
   end
 
 end
