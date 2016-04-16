@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
   def create
     @new_order = Order.new(order_parameters)
     if @new_order.save
-      redirect_to(:controller => 'orders', action => 'index')
+      redirect_to(:controller => 'orders', :action => 'index')
     else
       render('new')
     end
@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
   end
 
   def order_parameters
-    params.require(:order).permit(:status)
+    params.require(:order).permit(:order_number, :status, :package_id, :warehouse_id, :dispatcher_office_id, :courier_id, :client_id)
   end
   
 end

@@ -1,9 +1,39 @@
 <div class="">
   <h1>Add new Order</h1>
 
-  <%= link_to("Wróć", {:action => 'index'}) %>
-  <%= form_for(:courier, :url => {:action => "create"}) do |field|%>
-    <%= render(:partial => "form", :locals => {:field => field})%>
+  <%= link_to("Back", {:action => 'index'}) %>
+  <%= form_for(:order, :url => {:action => "create"}) do |field|%>
+
+ <table>
+  <tr>
+    <th> <%= field.label(:order_number, "Order number:")%> </th>
+    <td> <%= field.text_field(:order_number)%></td>
+  </tr>
+   <tr>
+    <th> <%= field.label(:status, "Status:")%> </th>
+    <td> <%= field.text_field(:status)%></td>
+  </tr>	
+   <tr>
+    <th> <%= field.label(:package_id, "Package ID:")%> </th>
+    <td> <%= field.select(:package_id, 1..10)%></td>
+  </tr>
+   <tr>
+    <th> <%= field.label(:warehouse_id, "Warehouse ID:")%> </th>
+    <td> <%= field.select(:warehouse_id, 1..10)%></td>
+  </tr>
+    <tr>
+    <th> <%= field.label(:dispatcher_office_id, "Dispatcher Office Id:")%> </th>
+    <td> <%= field.select(:dispatcher_office_id, 1..10)%></td>
+  </tr>
+    <tr>
+    <th> <%= field.label(:courier_id, "Courier ID:")%> </th>
+    <td> <%= field.select(:courier_id, 1..10)%></td>
+  </tr>
+    <tr>
+    <th> <%= field.label(:client_id, "Client ID:")%> </th>
+    <td> <%= field.select(:client_id, 1..10)%></td>
+  </tr>
+</table>
     <div >
       <%= submit_tag("ADD") %>
     </div>
