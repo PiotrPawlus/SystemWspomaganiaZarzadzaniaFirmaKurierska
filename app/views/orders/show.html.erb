@@ -2,13 +2,5 @@
 <p>
   Numer zamówienia: <b><%= @order.order_number %><br></b>
   Status: <b><%= @order.status %><br></b>
-  ID magazynu: <b><%= @order.warehouse_id %><br></b>
-  Nazwa magazynu: <b><%= @order.warehouse.name %><br></b>
-  ID dyspozytorni: <b><%= @order.dispatcher_office_id %><br></b>
-  Nazwa dyspozytorni: <b><%= @order.dispatcher_office.name %><br></b>
-  ID kuriera: <b><%= @order.courier_id %><br></b>
-  Kurier: <b><%= @order.courier.precinct %><br></b>
-  ID klienta: <b><%= @order.client_id %><br></b>
-  Nazwa klienta: <b><%= @order.client.name %><br></b>
 </p>
 <%= link_to("Back", {:action => 'index'}) %>
