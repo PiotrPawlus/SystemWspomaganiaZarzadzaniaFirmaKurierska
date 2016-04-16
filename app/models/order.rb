@@ -8,7 +8,7 @@ class Order < ActiveRecord::Base
   validates :order_number, :status, presence: true
 
   validates :order_number,
-          numericality: { only_integer: true }
+          length: { minimum: 16, maximum: 16, :message => "Number zamówienia musi zawierać 16 znaków."}
 
   validates :status,
           length: { minimum: 1, maximum: 80, :message => "Status musi zawierać od 1 do 80 znaków."}
