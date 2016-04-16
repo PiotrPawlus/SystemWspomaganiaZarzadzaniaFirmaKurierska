@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
   belongs_to :courier
   belongs_to :client
 
-  validates :order_number, :status, :warehouse_id, :dispatcher_office_id, :courier_id, :client_id, presence: true
+  validates :order_number, :status, presence: true
 
   validates :order_number,
           numericality: { only_integer: true }
