@@ -94,7 +94,6 @@ ActiveRecord::Schema.define(version: 20160405051313) do
     t.boolean  "is_dispather"
     t.boolean  "is_courier"
     t.boolean  "is_warehouse"
-    t.boolean  "is_client"
     t.datetime "created_at",                                       null: false
     t.datetime "updated_at",                                       null: false
     t.integer  "warehouse_id"
