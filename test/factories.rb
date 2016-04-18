@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :clients do
+  factory :client do
     email                   "testowy.uzytkownik@test.com"
     password                "password"
     password_confirmation   "password"
