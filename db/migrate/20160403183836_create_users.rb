@@ -12,7 +12,6 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean "is_dispather"
       t.boolean "is_courier"
       t.boolean "is_warehouse"
-      t.boolean "is_client"
       t.timestamps null: false
     end
     add_index("users","email")
