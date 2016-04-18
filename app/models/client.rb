@@ -6,6 +6,7 @@ class Client < ActiveRecord::Base
 
 
   validates :email,
+          email: true,
           length: { minimum: 1, maximum: 50, :message => "Email musi zawierać od 1 do 50 znaków."}
 
   validates :password,
