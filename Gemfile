@@ -26,6 +26,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# An email validator for Rails 3 and 4.
+gem 'email_validator'
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
