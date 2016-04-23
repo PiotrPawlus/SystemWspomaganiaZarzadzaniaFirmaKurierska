@@ -1,0 +1,22 @@
+<div class="field">
+  <%= f.label(:name, "Imię:")%><br />
+  <%= f.text_field :name, autofocus: true %>
+</div>
+
+<div class="f">
+  <%= f.label(:surname, "Nazwisko: ")%><br />
+  <%= f.text_field :surname, autofocus: true %>
+</div>
+
+<div class="field">
+  <% year = Date.today.year %>
+  <%= f.label(:birth_date, "Data urodzenia: ")%><br />
+  <%= f.date_select(:birth_date, order: [:day, :month, :year], start_year: 1900, end_year: year)%>
+</div>
+
+<div class="field">
+  <%= f.label(:position, "Wybierz stanowisko: ")%><br />
+  <%= f.select :position, options_for_select([['Administrator', 'Administrator'],['Dyspozytor', 'Dyspozytor'],['Kurier', 'Kurier'],['Magazynier', 'Magazynier']])%>
+</div>
+
+<br />

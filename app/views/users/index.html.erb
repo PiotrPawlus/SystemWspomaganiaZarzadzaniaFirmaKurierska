@@ -1,0 +1,33 @@
+<div class="">
+  <h1>Użytkownicy</h1>
+  <%= link_to("Dodaj użytkownika", {:controller => 'registrations', :action => 'sign_up'})%>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Email</th>
+      <th>Data urodzenia</th>
+      <th>Pozycja</th>
+      <th>Utworzono</th>
+      <th>Aktualizowano</th>
+      <th>Akcje</th>
+    </tr>
+    <% @users.each do |user|%>
+      <tr>
+        <th><%= user.id %></th>
+        <th><%= user.name %></th>
+        <th><%= user.surname %></th>
+        <th><%= user.email %></th>
+        <th><%= user.birth_date %></th>
+        <th><%= user.position %></th>
+        <th><%= user.created_at %></th>
+        <th><%= user.updated_at %></th>
+        <th>
+          <%= link_to("Pokaż", {:action => 'show', :id => user.id}, :class=>"")%>
+          <%= link_to("Edycja", {:action => 'edit', :id => user.id}, :class=>"")%>
+          <%= link_to("Usuń", {:action => 'destroy', :id => user.id }, :class=>"")%>
+        </th>
+      </tr>
+    <% end %>
+  </table>
