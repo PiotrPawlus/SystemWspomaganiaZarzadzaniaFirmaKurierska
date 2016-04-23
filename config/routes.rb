@@ -1,19 +1,6 @@
 Rails.application.routes.draw do
   devise_for :clients
-  devise_for :users
-  get 'clients/index'
-
-  get 'clients/new'
-
-  get 'clients/create'
-
-  get 'clients/edit'
-
-  get 'clients/update'
-
-  get 'clients/show'
-
-  get 'clients/destroy'
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
   get 'packages/index'
 
@@ -84,22 +71,6 @@ Rails.application.routes.draw do
   get 'warehouses/show'
 
   get 'warehouses/destory'
-
-  get 'users/index'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/show'
-
-  get 'users/destroy'
-
-  get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
