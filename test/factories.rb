@@ -1,12 +1,4 @@
 FactoryGirl.define do
-  factory :client do
-    email                   "testowy.uzytkownik@test.com"
-    password                "password"
-    password_confirmation   "password"
-    name                    "test"
-    surname                 "uzytkownik"
-    phone                   "600600600"
-  end
 
   factory :courier do
     name         "KurirowyTest"
@@ -50,37 +42,6 @@ FactoryGirl.define do
     cost                   15.90
   end
 
-  factory :user do
-    email                 "testowy.pracownik@test.com"
-    password              "password"
-    password_confirmation "password"
-    name                  "tester"
-    surname               "pracownik"
-    birth_date            '1990-01-01'
-    position              "Magazynier"
-
-    factory :is_admin do
-      is_admin            true
-    end
-
-    factory :is_dispather do
-      is_dispather        true
-    end
-
-    factory :is_courier do
-      is_courier          true
-    end
-
-    factory :is_warehouse do
-      is_warehouse        true
-    end
-
-    factory :employee do
-      is_admin            true
-      is_dispather        true
-      is_courier          true
-      is_warehouse        true
-    end
 
   end
 
