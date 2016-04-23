@@ -11,20 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405051313) do
+ActiveRecord::Schema.define(version: 20160404153941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "clients", force: :cascade do |t|
-    t.string   "email",           limit: 70,  null: false
-    t.string   "password_digest"
-    t.string   "name",            limit: 80,  null: false
-    t.string   "surname",         limit: 100, null: false
-    t.string   "phone",           limit: 15,  null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-  end
 
   create_table "couriers", force: :cascade do |t|
     t.string   "name",       limit: 50,  null: false
@@ -52,7 +42,6 @@ ActiveRecord::Schema.define(version: 20160405051313) do
     t.integer  "warehouse_id"
     t.integer  "dispatcher_office_id"
     t.integer  "courier_id"
-    t.integer  "client_id"
   end
 
   add_index "orders", ["order_number"], name: "index_orders_on_order_number", using: :btree
@@ -82,26 +71,6 @@ ActiveRecord::Schema.define(version: 20160405051313) do
     t.datetime "updated_at",                        null: false
     t.integer  "order_id"
   end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "name",                 limit: 50,                  null: false
-    t.string   "surname",              limit: 50,                  null: false
-    t.date     "birth_date",                                       null: false
-    t.string   "position",             limit: 100,                 null: false
-    t.boolean  "is_admin",                         default: false, null: false
-    t.boolean  "is_dispather"
-    t.boolean  "is_courier"
-    t.boolean  "is_warehouse"
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
-    t.integer  "warehouse_id"
-    t.integer  "dispatcher_office_id"
-    t.integer  "courier_id"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
   create_table "warehouses", force: :cascade do |t|
     t.string   "name",         limit: 50, null: false
