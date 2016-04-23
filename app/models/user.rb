@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 
   validates :email, :password, :password_confirmation, :name, :surname, :birth_date, :position, presence: true
 
+  validates :email,
+          email: true,
+          length: { minimum: 1, maximum: 50, :message => "Email musi zawierać od 1 do 50 znaków."}
+
   validates :name,
           length: { minimum: 1, maximum: 50, :message => "Imię musi zawierać od 1 do 50 znaków."}
 
