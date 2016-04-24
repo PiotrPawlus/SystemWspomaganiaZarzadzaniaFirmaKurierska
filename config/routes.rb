@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'client_panel/index'
 
-  devise_for :clients
+  devise_for :clients, controllers: { registrations: "clients/registrations"}
+  resources :clients
   devise_for :users, controllers: { registrations: "users/registrations" }
   resources :users
 
