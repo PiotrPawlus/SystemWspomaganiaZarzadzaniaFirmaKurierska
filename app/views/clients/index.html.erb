@@ -1,0 +1,36 @@
+<div class="">
+  <h1>Klienci</h1>
+  <% if user_signed_in? %>
+    <a href="/users/sign_out"  data_method="delete">Sign out</a>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Email</th>
+        <th>Utworzono</th>
+        <th>Aktualizowano</th>
+        <th>Akcje</th>
+      </tr>
+      <% @clients.each do |client|%>
+        <tr>
+          <th><%= client.id %></th>
+          <th><%= client.name %></th>
+          <th><%= client.surname %></th>
+          <th><%= client.email %></th>
+          <th><%= client.created_at %></th>
+          <th><%= client.updated_at %></th>
+          <th>
+            <%= link_to("Pokaż", {:action => 'show', :id => user.id}, :class=>"")%>
+            <%= link_to("Edycja", {:action => 'edit', :id => user.id}, :class=>"")%>
+            <%= link_to("Usuń", {:action => 'destroy', :id => user.id }, :class=>"")%>
+          </th>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <h1>Nie jesteś zalogowany</h1>
+    <%= link_to "Zarejestruj się", new_user_registration_path %> lub <%= link_to "Zaloguj się", new_user_session_path %>
+  <% end %>
+
+</div>
