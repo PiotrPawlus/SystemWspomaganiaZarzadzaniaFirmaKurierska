@@ -6,8 +6,8 @@ class ClientsController < ApplicationController
   end
 
   def show
-    sign_out :user
-    render :index
+    sign_out :client
+    render "client_panel/index"
   end
 
 end

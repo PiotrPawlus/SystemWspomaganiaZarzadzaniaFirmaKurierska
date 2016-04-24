@@ -1,2 +1,24 @@
-<h1>ClientPanel#index</h1>
-<p>Find me in app/views/client_panel/index.html.erb</p>
+<div class="">
+  <h1>Użytkownicy</h1>
+  <% if client_signed_in? %>
+    <a href="/clients/sign_out"  data_method="delete">Sign out</a>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Email</th>
+        <th>Data urodzenia</th>
+        <th>Pozycja</th>
+        <th>Utworzono</th>
+        <th>Aktualizowano</th>
+        <th>Akcje</th>
+      </tr>
+
+    </table>
+  <% else %>
+    <h1>Nie jesteś zalogowany</h1>
+    <%= link_to "Zarejestruj się", new_client_registration_path %> lub <%= link_to "Zaloguj się", new_client_session_path %>
+  <% end %>
+
+</div>
