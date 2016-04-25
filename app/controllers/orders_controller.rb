@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, except: [:new, :create, :edit, :update, :show]
+
   def index
     @orders = Order.all
   end
@@ -10,7 +12,12 @@ class OrdersController < ApplicationController
   def create
     @new_order = Order.new(order_parameters)
     if @new_order.save
-      redirect_to(:controller => 'orders', :action => 'index')
+      if client_signed_in?
+        @new_order.update_attributes(:client_id => current_client.id)
+        redirect_to(:controller => 'packages', :action => 'new')
+      else
+        redirect_to(:controller => 'orders', :action => 'index')
+      end
     else
       render('new')
     end
@@ -42,6 +49,7 @@ class OrdersController < ApplicationController
     redirect_to(:action => 'index')
   end
 
+  private
   def order_parameters
     params.require(:order).permit(:order_number, :status)
   end

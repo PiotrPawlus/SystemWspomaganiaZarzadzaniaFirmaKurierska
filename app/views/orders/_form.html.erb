@@ -3,8 +3,26 @@
    <th> <%= field.label(:order_number, "Numer zamówienia:")%> </th>
    <td> <%= field.text_field(:order_number)%></td>
  </tr>
- <tr>
-   <th> <%= field.label(:status, "Status:")%> </th>
-   <td> <%= field.text_field(:status)%></td>
- </tr>
+ <% if client_signed_in?%>
+   <tr>
+     <th> <%= field.label(:status, "Status:")%> </th>
+     <td> <%= field.select :status, options_for_select(
+          [['Do odebrania - przedpłata', 'Do odebrania - przedpłata'],
+          ['Do odebrania - płatność przy odbiorze', 'Do odebrania - płatność przy odbiorze']])%>
+     </td>
+   </tr>
+<% elsif client_signed_in?%>
+  <tr>
+    <th> <%= field.label(:status, "Status:")%> </th>
+    <td> <%= field.select :status, options_for_select(
+         [['Do odebrania - przedpłata', 'Do odebrania - przedpłata'],
+         ['Do odebrania - płatność przy odbiorze', 'Do odebrania - płatność przy odbiorze'],
+         ['Przyjęte przez kuriera', 'Przyjęte przez kuriera'],
+         ['Przyjęte do magazynu', 'Przyjęte do magazynu'],
+         ['Wydane z magazynu', 'Wydane z magazynu'],
+         ['Dostarczone do odbiorcy', 'Dostarczone do odbiorcy']
+         ])%>
+    </td>  </tr>
+ <%end %>
+
 </table>

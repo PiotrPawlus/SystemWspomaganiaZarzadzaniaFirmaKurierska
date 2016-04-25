@@ -1,7 +1,11 @@
 <div class="">
   <h1>Dodaj nowej paczki </h1>
 
-  <%= link_to("Wróć", {:action => 'index'}) %>
+  <% if client_signed_in? %>
+    <%= link_to("Wróć", {:controller => 'client_panel', :action => 'index'}) %>  
+  <% elsif user_sined_in? %>
+    <%= link_to("Wróć", {:action => 'index'}) %>
+  <% end %>
   <%= form_for(:package, :url => {:action => "create"}) do |field|%>
     <%= render(:partial => "form", :locals => {:field => field})%>
     <div >

@@ -8,7 +8,6 @@ class PackagesController < ApplicationController
   def new
     @package = Package.new
     client_id = current_client.id
-    @order = Order.find(id: client_id).last
   end
 
   def create
