@@ -172,16 +172,6 @@ class PackageTest < ActiveSupport::TestCase
     assert_not package.save, "Saved package with too long postcode_sender"
   end
 
-  test "should_not_save_package_without_actual_place" do
-    package = build(:package, actual_place: "")
-    assert_not package.save, "Saved package without actual_place"
-  end
-
-  test "should_not_save_package_with_too_long_actual_place" do
-    package = build(:package, actual_place: "MagazynyToJestToMagazynyToJestToMagazynyToJestToMagazynyToJestToMagazynyToJestToMagazynyToJestToMagazynyToJestToMagazynyToJestTo")
-    assert_not package.save, "Saved package with too long actual_place"
-  end
-
   test "should_not_save_package_without_phone_sender" do
     package = build(:package, phone_sender: "")
     assert_not package.save, "Saved package without phone_sender"

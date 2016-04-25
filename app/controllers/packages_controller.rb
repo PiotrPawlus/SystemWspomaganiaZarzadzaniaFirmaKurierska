@@ -1,5 +1,5 @@
 class PackagesController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :show, :destroy]
+  before_action :authenticate_user!, except: [:new, :create, :edit, :update, :show, :destroy]
 
   def index
     @packages = Package.all
@@ -7,6 +7,8 @@ class PackagesController < ApplicationController
 
   def new
     @package = Package.new
+    client_id = current_client.id
+    @order = Order.find(id: client_id).last
   end
 
   def create
@@ -47,7 +49,6 @@ class PackagesController < ApplicationController
   def package_parameters
     params.require(:package).permit(:weight, :size_X, :size_Y, :size_Z, :name_of_recipient, :surname_of_recipient,
     :city_delivery, :street_delivery, :house_number_delivery, :local_number_delivery, :postcode_delivery,
-    :city_sender, :street_sender, :house_number_sender, :local_number_sender, :postcode_sender,
-    :actual_place, :phone_delivery, :phone_sender, :paid, :cost)
+    :city_sender, :street_sender, :house_number_sender, :local_number_sender, :postcode_sender, :phone_delivery, :phone_sender, :paid, :cost)
   end
 end

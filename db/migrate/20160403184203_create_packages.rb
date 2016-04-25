@@ -17,7 +17,6 @@ class CreatePackages < ActiveRecord::Migration
       t.string "house_number_sender", :limit=>10, :null=>false
       t.string "local_number_sender", :limit=>10
       t.string "postcode_sender", :limit=>10, :null=>false
-      t.string "actual_place", :limit=>100, :null=>false
       t.string "phone_delivery", :limit=>15, :null=>false
       t.string "phone_sender", :limit=>15, :null=>false
       t.float "cost", :null=>false

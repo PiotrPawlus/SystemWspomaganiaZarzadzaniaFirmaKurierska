@@ -45,7 +45,6 @@ FactoryGirl.define do
      house_number_sender    "1"
      local_number_sender    "b"
      postcode_sender        "30-200"
-     actual_place           "W drodze"
      phone_delivery         "600600600"
      phone_sender           "500500500"
      cost                   15.90

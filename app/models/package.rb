@@ -3,7 +3,7 @@ class Package < ActiveRecord::Base
 
   validates :weight, :size_X, :size_Y, :size_Z,
     :name_of_recipient, :surname_of_recipient, :city_delivery, :street_delivery, :house_number_delivery, :postcode_delivery,
-    :city_sender, :street_sender, :house_number_sender, :postcode_sender, :actual_place, :phone_delivery, :phone_sender, :cost,
+    :city_sender, :street_sender, :house_number_sender, :postcode_sender, :phone_delivery, :phone_sender, :cost,
     presence: true
 
   validates :weight,
@@ -53,9 +53,6 @@ class Package < ActiveRecord::Base
 
   validates :postcode_sender,
           length: { minimum: 1, maximum: 10, :message => "Kod pocztowy dla magazynu musi zawierać od 1 do 10 znaków."}
-
-  validates :actual_place,
-          length: { minimum: 1, maximum: 100, :message => "Miejsce paczki musi zawierać maksymalnie 100 znaków."}
 
   validates :phone_delivery,
           numericality: { only_integer: true },
