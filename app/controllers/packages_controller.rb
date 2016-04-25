@@ -1,4 +1,6 @@
 class PackagesController < ApplicationController
+  before_action :authenticate_user!, except: [:new, :show, :destroy]
+
   def index
     @packages = Package.all
   end

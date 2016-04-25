@@ -1,4 +1,6 @@
 class CouriersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @couriers = Courier.all
   end
