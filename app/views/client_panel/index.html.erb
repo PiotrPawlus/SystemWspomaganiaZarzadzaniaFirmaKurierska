@@ -2,20 +2,27 @@
   <h1>Użytkownicy</h1>
   <% if client_signed_in? %>
     <a href="/clients/sign_out"  data_method="delete">Sign out</a>
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Imię</th>
-        <th>Nazwisko</th>
-        <th>Email</th>
-        <th>Data urodzenia</th>
-        <th>Pozycja</th>
-        <th>Utworzono</th>
-        <th>Aktualizowano</th>
-        <th>Akcje</th>
-      </tr>
+    <div class="">
+        <h4>PANEL KLIENTA</h4>
+    </div>
 
-    </table>
+    <div class="">
+        <h5>Moje Paczki</h5>
+        <a href="#">Nadaj paczki</a>
+    </div>
+
+    <div class="">
+        <h4>Moje dane</h4>
+        <p><%= current_client.name %></p>
+        <p><%= current_client.surname %></p>
+        <p><%= current_client.email %></p>
+        <p><%= current_client.created_at %></p>
+        <p><%= current_client.updated_at %></p>
+        <%= link_to "Edytuj dane", edit_client_registration_path %>
+    </div>
+
+
+
   <% else %>
     <h1>Nie jesteś zalogowany</h1>
     <%= link_to "Zarejestruj się", new_client_registration_path %> lub <%= link_to "Zaloguj się", new_client_session_path %>

@@ -5,7 +5,7 @@ class Client < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  validates :email, :password, :password_confirmation, :name, :surname, :phone, presence: true
+  validates :email, :name, :surname, :phone, presence: true
 
 
   validates :email,
