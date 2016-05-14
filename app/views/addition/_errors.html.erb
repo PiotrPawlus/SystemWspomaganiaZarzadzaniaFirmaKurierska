@@ -1,0 +1,24 @@
+<% if object && object.errors.size > 0 %>
+  <div class="bg_danger">
+    <table class="table">
+      <!-- <%if session[:is_admin] == true%>
+      <tr class="warning">
+        <td>
+          Wystąpiły błędy podczas zapisu rekurdu do bazy daynch, ilość błędów: <%= object.errors.size %>
+          <br>
+          dla następujących pól:
+        </td>
+      </tr>
+      <%end%> -->
+      <% object.errors.messages.values.each do |message| %>
+        <%message.each do  |m| %>
+          <%if  m != "can't be blank" and m != "doesn't match Password" %>
+            <tr class="danger">
+              <td><b><%= m %></b></td>
+            </tr>
+          <%end%>
+        <%end %>
+      <% end %>
+    </table>
+  </div>
+<% end %>
