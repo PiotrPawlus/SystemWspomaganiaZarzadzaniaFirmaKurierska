@@ -1,7 +1,9 @@
+<%= error(@order) %>
+
 <table>
  <tr>
    <th> <%= field.label(:order_number, "Numer zamówienia:")%> </th>
-   <td> <%= field.text_field(:order_number)%></td>
+   <th> <%= field.label(:order_number, $orderNumber)%> </th>
  </tr>
  <% if client_signed_in?%>
    <tr>
