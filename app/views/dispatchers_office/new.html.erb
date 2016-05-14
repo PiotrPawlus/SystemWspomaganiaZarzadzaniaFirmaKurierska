@@ -1,6 +1,9 @@
 <div class="">
   <h1>Dodaj nową dyspozytornie</h1>
 
+
+
+
   <%= link_to("Wróć", {:action => 'index'}) %>
   <%= form_for(:dispatcher_office, :url => {:action => "create"}) do |field|%>
     <%= render(:partial => "form", :locals => {:field => field})%>
