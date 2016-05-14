@@ -11,8 +11,8 @@ class PackagesController < ApplicationController
   end
 
   def create
-    @new_package = Package.new(package_parameters)
-    if @new_package.save
+    @package = Package.new(package_parameters)
+    if @package.save
       redirect_to(:controller => 'packages', :action=>'index')
     else
       render('new')
