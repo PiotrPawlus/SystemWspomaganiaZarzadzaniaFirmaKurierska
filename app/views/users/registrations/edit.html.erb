@@ -27,7 +27,14 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <%= render(:partial => "form", :locals => {:field => field})%>
+  <%= render(:partial => "form", :locals => {:f => f})%>
+
+  <% if current_user.is_admin %>
+    <div class="field">
+      <%= f.label(:position, "Wybierz stanowisko: ")%><br />
+      <%= f.select :position, options_for_select([['Administrator', 'Administrator'],['Dyspozytor', 'Dyspozytor'],['Kurier', 'Kurier'],['Magazynier', 'Magazynier']])%>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "Update" %>

@@ -1,0 +1,15 @@
+<div class="">
+  <h3>Panel sterowania</h3>
+</div>
+<%= link_to('Logout', destroy_client_session_path, :method => :delete) %>
+<% if current_user.is_admin %>
+  <%= render(:partial => "admin")%>
+<% elsif current_user.is_dispather %>
+  <%= render(:partial => "dispather")%>
+<% elsif current_user.is_courier %>
+  <%= render(:partial => "courier")%>
+<% elsif current_user.is_warehouse %>
+  <%= render(:partial => "warehouse")%>
+<% else %>
+  <h4>Proszę czekać na zatwierdzenie danych przez administratora</h4>
+<% end %>
