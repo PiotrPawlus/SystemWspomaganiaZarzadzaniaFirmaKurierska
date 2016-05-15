@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   belongs_to :dispatcher_office
   belongs_to :courier
 
-  validates :email, :password, :password_confirmation, :name, :surname, :birth_date, :position, presence: true
+  validates :email, :password, :password_confirmation, :name, :surname, :birth_date, presence: true
 
   validates :email,
           email: true,
@@ -20,8 +20,4 @@ class User < ActiveRecord::Base
 
   validates :surname,
           length: { minimum: 1, maximum: 50, :message => "Nazwisko musi zawierać od 1 do 50 znaków."}
-
-  validates :position,
-          length: { minimum: 1, maximum: 100, :message => "Pozycja musi zawierać od 1 do 50 znaków."}
-
 end
