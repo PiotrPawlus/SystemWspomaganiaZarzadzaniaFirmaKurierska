@@ -9,8 +9,21 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    generateOrderNumber = rand(1e9...1e16).to_i
-  	$orderNumber = generateOrderNumber.to_s
+    continueLoop = true
+
+    while continueLoop do
+      continueLoop = false
+      generateOrderNumber = rand(1e15...1e16).to_i
+    	$orderNumber = generateOrderNumber.to_s
+      if $orderNumber.length == 16
+        Order.all.each do |temp|
+          if temp.order_number == $orderNumber
+            continueLoop = true
+          end
+        end
+      end
+    end
+
   end
 
   def create
