@@ -1,4 +1,66 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <div class="wrapper-login">
+
+            <div class="top-sidebar">
+                <div class="pull-left">
+                    <div class="logo-img">
+                        <%= image_tag("logo.png", alt: "Logo Kurier") %>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="login-name">
+                        <p>Jakub Michnowicz</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid content">
+                <div class="row">
+                    <div class="sidebar">
+                        <div class="sidebar-hide">
+                            <i class="fa fa-bars open" aria-hidden="true"></i>
+                            <p class="icon-desc">Rozwiń panel</p>
+                        </div>
+                        <div class="sidebar-hide hidesidebar">
+                            <i class="fa fa-bars " aria-hidden="true"></i>
+                            <p class="icon-desc">Zwiń panel</p>
+                        </div>
+                        <div class="sidebar-hide hidesidebar">
+                            <i class="fa fa-bars " aria-hidden="true"></i>
+                            <p class="icon-desc">Wróć</p>
+                        </div>
+                        <div class="sidebar-hide hidesidebar">
+                            <i class="fa fa-bars " aria-hidden="true"></i>
+                            <p class="icon-desc">Edycja danych klienta</p>
+                        </div>
+                         <div class="sidebar-hide hidesidebar">
+                            <i class="fa fa-bars " aria-hidden="true"></i>
+                            <p class="icon-desc">Edycja danych użytkownika</p>
+                        </div>
+                         <div class="sidebar-hide hidesidebar">
+                            <i class="fa fa-bars " aria-hidden="true"></i>
+                            <p class="icon-desc">Orders new</p>
+                        </div>
+                         <div class="sidebar-hide hidesidebar">
+                            <i class="fa fa-bars " aria-hidden="true"></i>
+                            <p class="icon-desc">Package new</p>
+                        </div>
+                        <div class="sidebar-hide hidesidebar">
+                            <i class="fa fa-bars " aria-hidden="true"></i>
+                            <p class="icon-desc">Nadaj paczkę</p>
+                        </div>
+                        <div class="sidebar-hide hidesidebar">
+                            <i class="fa fa-bars " aria-hidden="true"></i>
+                            <p class="icon-desc">Wyloguj się</p>
+                        </div>
+                    </div>
+                    <div class="content-main col-xs-12">
+                        <div class="header col-xs-12 text-center">
+                            <h3 style="margin: 25px 0px 30px 60px;">Edycja danych klienta</h3>
+                            <!-- <h5>Witamy w serwisie Koń Kurier</h5> -->
+                        </div>
+                        <div class="options editinfo col-xs-12" style="height: 75%;">
+                            <!-- <h5>Opcje</h5> -->
+<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -39,3 +101,11 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
