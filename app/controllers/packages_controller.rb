@@ -13,7 +13,11 @@ class PackagesController < ApplicationController
   def create
     @package = Package.new(package_parameters)
     if @package.save
-      redirect_to(:controller => 'packages', :action=>'index')
+      if client_signed_in?
+        redirect_to(:controller => 'client_panel', :action=>'index')
+      elsif user_signed_in?
+        redirect_to(:controller => 'packages', :action=>'index')
+      end
     else
       render('new')
     end
