@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20160424203729) do
     t.string   "name",                   limit: 50,                  null: false
     t.string   "surname",                limit: 50,                  null: false
     t.date     "birth_date",                                         null: false
-    t.string   "position",               limit: 100,                 null: false
+    t.string   "position",               limit: 100
     t.boolean  "is_admin",                           default: false, null: false
     t.boolean  "is_dispather"
     t.boolean  "is_courier"
