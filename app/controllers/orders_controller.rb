@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    $orderNumber = @order.order_number
   end
 
   def update
