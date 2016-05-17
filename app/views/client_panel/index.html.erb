@@ -8,7 +8,7 @@
                 </div>
                 <div class="pull-right">
                     <div class="login-name">
-                        <p>Jakub Michnowicz</p>
+                        <p><%= current_client.name + " " + current_client.surname %></p>
                     </div>
                 </div>
             </div>
@@ -82,15 +82,7 @@
                           <div class="">
                             <!-- <h1>Użytkownicy</h1> -->
                             <% if client_signed_in? %>
-
-
                                 <!-- <%= link_to('Logout', destroy_client_session_path, :method => :delete) %> -->
-
-
-                              <div class="">
-                                  <h4>PANEL KLIENTA</h4>
-                              </div>
-
                               <div class="">
                                   <h5>Moje Paczki</h5>
 <!--                                   <%= link_to("Nadaj paczke", {:controller => 'orders', :action => 'new'}, :class=>"")%> -->
@@ -109,18 +101,6 @@
 
                               </div>
 
-                              <div class="">
-                                  <h4>Moje dane</h4>
-                                  <p>Imie: <%= current_client.name %></p>
-                                  <p>Nazwisko: <%= current_client.surname %></p>
-                                  <p>Email: <%= current_client.email %></p>
-                                  <p>Data rejestracji: <%= current_client.created_at %></p>
-                                  <p>Data ostatniej modyfikacji: <%= current_client.updated_at %></p>
-                                  <!-- <%= link_to "Edytuj dane", edit_client_registration_path %> -->
-                              </div>
-
-
-
                             <% else %>
                               <h1>Nie jesteś zalogowany</h1>
                               <%= link_to "Zarejestruj się", new_client_registration_path %> lub <%= link_to "Zaloguj się", new_client_session_path %>
@@ -135,7 +115,3 @@
             </div>
 
         </div>
-
-
-
-
