@@ -1,3 +1,4 @@
+<<<<<<< HEAD
         <div class="wrapper-login">
 
             <div class="top-sidebar">
@@ -58,13 +59,19 @@
                             <!-- <h5>Opcje</h5> -->
 
 
-  <%= link_to("Wróć", {:action => 'index'}) %>
-  <%= form_for(:order, :url => {:action => "create"}) do |field|%>
-    <%= render(:partial => "form", :locals => {:field => field})%>
-    <div >
-      <%= submit_tag("Dodaj") %>
-    </div>
-  <% end %>
+
+                          <% if client_signed_in? %>
+                            <%= link_to("Wróć", {:controller => "client_panel", :action => "index"}) %>
+                          <% elsif user_signed_in? %>
+                            <%= link_to("Wróć", {:action => 'index'}) %>
+                          <% end %>
+
+                          <%= form_for(:order, :url => {:action => "create"}) do |field|%>
+                            <%= render(:partial => "form", :locals => {:field => field})%>
+                            <div >
+                              <%= submit_tag("Dodaj") %>
+                            </div>
+                          <% end %>
 
 
                         </div>
@@ -73,6 +80,3 @@
             </div>
 
         </div>
-
-
-
