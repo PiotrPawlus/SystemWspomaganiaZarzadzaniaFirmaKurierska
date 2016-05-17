@@ -1,4 +1,25 @@
-<h2>Forgot your password?</h2>
+        <div class="wrapper-login">
+
+            <div class="top-sidebar">
+                <div class="pull-left">
+                    <div class="logo-img">
+                        <img src="images/logo.png" alt="logo koń kurier">
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <div class="login-name">
+                        <p>Jakub Michnowicz</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h3>Zapomniałeś hasła?</h3>
+                    </div>
+                    <div class="col-xs-6 col-xs-offset-3 text-center panel-outer">
+                        <div class="panel">
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -13,4 +34,17 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+
+
+
+                        </div>
+                        <%= render "devise/shared/links" %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+

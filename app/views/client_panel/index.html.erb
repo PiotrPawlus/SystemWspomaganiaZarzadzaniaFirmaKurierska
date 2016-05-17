@@ -59,7 +59,7 @@
                             <h5>Witamy w serwisie Koń Kurier</h5>
                         </div>
                         <div class="options col-xs-12">
-                            <h5>Opcje</h5>
+                            <h5></h5>
                             <ul class="panel-option col-xs-12">
                                 <li class="panel-option-single col-xs-2">
                                     <div class="inner">
@@ -97,14 +97,9 @@
                                         <a href="">Lorem ipsum dolor sit amet.</a>
                                     </div>
                                 </li>
-                                <li class="panel-option-single col-xs-2">
-                                    <div class="inner">
-                                        <i class="fa fa-bars " aria-hidden="true"></i>
-                                        <a href="">Lorem ipsum dolor sit amet.</a>
-                                    </div>
-                                </li>
+
                             </ul>
-                                                    <div class="col-xs-12">
+                          <div class="col-xs-12">
                           <div class="">
                             <!-- <h1>Użytkownicy</h1> -->
                             <% if client_signed_in? %>
@@ -137,11 +132,11 @@
 
                               <div class="">
                                   <h4>Moje dane</h4>
-                                  <p><%= current_client.name %></p>
-                                  <p><%= current_client.surname %></p>
-                                  <p><%= current_client.email %></p>
-                                  <p><%= current_client.created_at %></p>
-                                  <p><%= current_client.updated_at %></p>
+                                  <p>Imie: <%= current_client.name %></p>
+                                  <p>Nazwisko: <%= current_client.surname %></p>
+                                  <p>Email: <%= current_client.email %></p>
+                                  <p>Data rejestracji: <%= current_client.created_at %></p>
+                                  <p>Data ostatniej modyfikacji: <%= current_client.updated_at %></p>
                                   <%= link_to "Edytuj dane", edit_client_registration_path %>
                               </div>
 
