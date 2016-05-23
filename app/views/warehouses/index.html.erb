@@ -1,40 +1,45 @@
 <div class="">
-  <h1>Magazyny</h1>
-  <p>
-    Ilość: <%= @warehouses.size %>
-  </p>
-  <%= link_to("Nowy magazyn", {:controller => 'warehouses', :action => 'new'}, :class=>"")%>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Nazwa</th>
-      <th>Adres</th>
-      <th>Pojemność</th>
-      <th>Utworzono</th>
-      <th>Aktualizowano</th>
-      <th>Akcje</th>
-    </tr>
-    <% @warehouses.each do |warehouse|%>
+  <% if user_signed_in? %>
+    <h3>Magazyny</h3>
+    <p>
+      <%= link_to("Panel administratora", {:controller => 'user', :action => 'index'}, :class=>"")%>
+    </p>
+    <p>
+      Ilość: <%= @warehouses.size %>
+    </p>
+    <%= link_to("Nowy magazyn", {:controller => 'warehouses', :action => 'new'}, :class=>"")%>
+    <table>
       <tr>
-        <th><%= warehouse.id %></th>
-        <th><%= warehouse.name %></th>
-        <% if warehouse.local_number.present? %>
-          <th><%= warehouse.city %>, <%= warehouse.street %><br>
-             <%= warehouse.house_number%>/<%=warehouse.local_number%> <%= warehouse.postcode %></th>
-        <% else %>
-          <th><%= warehouse.city %>, <%= warehouse.street %><br>
-           <%= warehouse.house_number%> <%= warehouse.postcode %></th>
-        <% end %>
-        <th><%= warehouse.capacity %></th>
-        <th><%= warehouse.created_at %></th>
-        <th><%= warehouse.updated_at %></th>
-        <th>
-          <%= link_to("Pokaż", {:action => 'show', :id => warehouse.id}, :class=>"")%>
-          <%= link_to("Edycja", {:action => 'edit', :id => warehouse.id}, :class=>"")%>
-          <%= link_to("Usuń", {:action => 'destroy', :id => warehouse.id }, :class=>"")%>
-        </th>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Adres</th>
+        <th>Pojemność</th>
+        <th>Utworzono</th>
+        <th>Aktualizowano</th>
+        <th>Akcje</th>
       </tr>
-    <% end %>
-  </table>
+      <% @warehouses.each do |warehouse|%>
+        <tr>
+          <th><%= warehouse.id %></th>
+          <th><%= warehouse.name %></th>
+          <% if warehouse.local_number.present? %>
+            <th><%= warehouse.city %>, <%= warehouse.street %><br>
+               <%= warehouse.house_number%>/<%=warehouse.local_number%> <%= warehouse.postcode %></th>
+          <% else %>
+            <th><%= warehouse.city %>, <%= warehouse.street %><br>
+             <%= warehouse.house_number%> <%= warehouse.postcode %></th>
+          <% end %>
+          <th><%= warehouse.capacity %></th>
+          <th><%= warehouse.created_at %></th>
+          <th><%= warehouse.updated_at %></th>
+          <th>
+            <%= link_to("Pokaż", {:action => 'show', :id => warehouse.id}, :class=>"")%>
+            <%= link_to("Edycja", {:action => 'edit', :id => warehouse.id}, :class=>"")%>
+            <%= link_to("Usuń", {:action => 'destroy', :id => warehouse.id }, :class=>"")%>
+          </th>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
 
 </div>

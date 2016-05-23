@@ -1,7 +1,7 @@
 <div class="">
-  <h1>Użytkownicy</h1>
-  <% if user_signed_in? %>
-    <a href="/users/sign_out"  data_method="delete">Sign out</a>
+  <% if user_signed_in? and current_user.is_admin %>
+    <h3>Pracownicy</h3>
+    <%= link_to("Panel administratora", {:controller => 'user', :action => 'index'}, :class=>"")%>
     <table>
       <tr>
         <th>ID</th>

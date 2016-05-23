@@ -1,27 +1,35 @@
 <div class="">
-  <h1>Paczki</h1>
-  <%= link_to("Dodaj paczkę", {:controller => 'packages', :action => 'new'})%>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Waga</th>
-      <th>Koszt</th>
-      <th>Utworzono</th>
-      <th>Aktualizowano</th>
-      <th>Akcje</th>
-    </tr>
-    <% @packages.each do |package|%>
+  <% if user_signed_in? %>
+    <h3>Paczki</h3>
+    <p>
+      <%= link_to("Panel administratora", {:controller => 'user', :action => 'index'}, :class=>"")%>
+    </p>
+    <p>
+      <%= link_to("Dodaj paczkę", {:controller => 'packages', :action => 'new'})%>
+    </p>
+
+    <table>
       <tr>
-        <th><%= package.id %></th>
-        <th><%= package.weight %></th>
-        <th><%= package.cost %></th>
-        <th><%= package.created_at %></th>
-        <th><%= package.updated_at %></th>
-        <th>
-          <%= link_to("Pokaż", {:action => 'show', :id => package.id}, :class=>"")%>
-          <%= link_to("Edycja", {:action => 'edit', :id => package.id}, :class=>"")%>
-          <%= link_to("Usuń", {:action => 'destroy', :id => package.id }, :class=>"")%>
-        </th>
+        <th>ID</th>
+        <th>Waga</th>
+        <th>Koszt</th>
+        <th>Utworzono</th>
+        <th>Aktualizowano</th>
+        <th>Akcje</th>
       </tr>
+      <% @packages.each do |package|%>
+        <tr>
+          <th><%= package.id %></th>
+          <th><%= package.weight %></th>
+          <th><%= package.cost %></th>
+          <th><%= package.created_at %></th>
+          <th><%= package.updated_at %></th>
+          <th>
+            <%= link_to("Pokaż", {:action => 'show', :id => package.id}, :class=>"")%>
+            <%= link_to("Edycja", {:action => 'edit', :id => package.id}, :class=>"")%>
+            <%= link_to("Usuń", {:action => 'destroy', :id => package.id }, :class=>"")%>
+          </th>
+        </tr>
+      <% end %>
     <% end %>
   </table>
