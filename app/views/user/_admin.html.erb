@@ -1,1 +1,28 @@
-PANEL ADMINISTRATORA
+<div class="">
+    <h5>Witamy w panelu administratora</h5>
+</div>
+<p>
+  <%= link_to("Strona główna", {:controller => 'home', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Klienci", {:controller => 'clients', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Pracownicy", {:controller => 'users', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Wszystkie zamówienia", {:controller => 'orders', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Paczki", {:controller => 'packages', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Magazyny", {:controller => 'warehouses', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Dyspozytornie", {:controller => 'dispatchers_office', :action => 'index'}) %>
+</p>
+
+<p>
+  <%= link_to('Logout', destroy_client_session_path, :method => :delete) %>
+</p>
