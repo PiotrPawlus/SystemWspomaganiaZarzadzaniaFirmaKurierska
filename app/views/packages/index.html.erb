@@ -27,7 +27,10 @@
           <th>
             <%= link_to("Pokaż", {:action => 'show', :id => package.id}, :class=>"")%>
             <%= link_to("Edycja", {:action => 'edit', :id => package.id}, :class=>"")%>
-            <%= link_to("Usuń", {:action => 'destroy', :id => package.id }, :class=>"")%>
+            <% if current_user.is_admin or current_user.is_dispather %>
+              <%= link_to("Usuń", {:action => 'destroy', :id => package.id }, :class=>"")%>
+            <% end %>
+
           </th>
         </tr>
       <% end %>
