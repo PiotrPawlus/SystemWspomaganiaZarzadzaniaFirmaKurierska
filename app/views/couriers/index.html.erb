@@ -1,5 +1,5 @@
 <div class="">
-  <% if user_signed_in? and current_user.is_admin %>
+  <% if user_signed_in? and current_user.is_admin or current_user.is_dispather %>
     <h3>Kurierzy</h3>
     <%= link_to("Panel administratora", {:controller => 'user', :action => 'index'}, :class=>"")%>
     <p>
@@ -13,7 +13,9 @@
         <th>Obwód</th>
         <th>Utworzono</th>
         <th>Aktualizowano</th>
-        <th>Akcje</th>
+        <% if current_user.is_admin %>
+          <th>Akcje</th>
+        <% end %>
       </tr>
       <% @couriers.each do |courier|%>
         <tr>
@@ -22,11 +24,13 @@
           <th><%= courier.precinct %></th>
           <th><%= courier.created_at %></th>
           <th><%= courier.updated_at %></th>
-          <th>
-            <%= link_to("Pokaż", {:action => 'show', :id => courier.id}, :class=>"")%>
-            <%= link_to("Edycja", {:action => 'edit', :id => courier.id}, :class=>"")%>
-            <%= link_to("Usuń", {:action => 'destroy', :id => courier.id }, :class=>"")%>
-          </th>
+          <% if current_user.is_admin %>
+            <th>
+              <%= link_to("Pokaż", {:action => 'show', :id => courier.id}, :class=>"")%>
+              <%= link_to("Edycja", {:action => 'edit', :id => courier.id}, :class=>"")%>
+              <%= link_to("Usuń", {:action => 'destroy', :id => courier.id }, :class=>"")%>
+            </th>
+          <% end %>
         </tr>
       <% end %>
     </table>

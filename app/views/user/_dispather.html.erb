@@ -1,1 +1,18 @@
-dispather
+<div class="">
+    <h5>Witamy w panelu dyspozytora</h5>
+</div>
+<p>
+  <%= link_to("Strona główna", {:controller => 'home', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Wszystkie zamówienia", {:controller => 'orders', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Paczki", {:controller => 'packages', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to("Kurierzy", {:controller => 'couriers', :action => 'index'}) %>
+</p>
+<p>
+  <%= link_to('Logout', destroy_client_session_path, :method => :delete) %>
+</p>
