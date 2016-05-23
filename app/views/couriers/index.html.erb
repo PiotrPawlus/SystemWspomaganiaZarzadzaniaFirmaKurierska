@@ -1,32 +1,34 @@
 <div class="">
-  <h1>Kurierzy</h1>
-  <p>
-    Ilość: <%= @couriers.size %>
-  </p>
-  <%= link_to("Nowy kurier", {:controller => 'couriers', :action => 'new'}, :class=>"")%>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Nazwa</th>
-      <th>Obwód</th>
-      <th>Utworzono</th>
-      <th>Aktualizowano</th>
-      <th>Akcje</th>
-    </tr>
-    <% @couriers.each do |courier|%>
+  <% if user_signed_in? and current_user.is_admin %>
+    <h3>Kurierzy</h3>
+    <%= link_to("Panel administratora", {:controller => 'user', :action => 'index'}, :class=>"")%>
+    <p>
+      Ilość: <%= @couriers.size %>
+    </p>
+    <%= link_to("Nowy kurier", {:controller => 'couriers', :action => 'new'}, :class=>"")%>
+    <table>
       <tr>
-        <th><%= courier.id %></th>
-        <th><%= courier.name %></th>
-        <th><%= courier.precinct %></th>
-        <th><%= courier.created_at %></th>
-        <th><%= courier.updated_at %></th>
-        <th>
-          <%= link_to("Pokaż", {:action => 'show', :id => courier.id}, :class=>"")%>
-          <%= link_to("Edycja", {:action => 'edit', :id => courier.id}, :class=>"")%>
-          <%= link_to("Usuń", {:action => 'destroy', :id => courier.id }, :class=>"")%>
-        </th>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Obwód</th>
+        <th>Utworzono</th>
+        <th>Aktualizowano</th>
+        <th>Akcje</th>
       </tr>
-    <% end %>
-  </table>
-
+      <% @couriers.each do |courier|%>
+        <tr>
+          <th><%= courier.id %></th>
+          <th><%= courier.name %></th>
+          <th><%= courier.precinct %></th>
+          <th><%= courier.created_at %></th>
+          <th><%= courier.updated_at %></th>
+          <th>
+            <%= link_to("Pokaż", {:action => 'show', :id => courier.id}, :class=>"")%>
+            <%= link_to("Edycja", {:action => 'edit', :id => courier.id}, :class=>"")%>
+            <%= link_to("Usuń", {:action => 'destroy', :id => courier.id }, :class=>"")%>
+          </th>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
 </div>

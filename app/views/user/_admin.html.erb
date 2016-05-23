@@ -22,7 +22,9 @@
 <p>
   <%= link_to("Dyspozytornie", {:controller => 'dispatchers_office', :action => 'index'}) %>
 </p>
-
+<p>
+  <%= link_to("Kurierzy", {:controller => 'couriers', :action => 'index'}) %>
+</p>
 <p>
   <%= link_to('Logout', destroy_client_session_path, :method => :delete) %>
 </p>
