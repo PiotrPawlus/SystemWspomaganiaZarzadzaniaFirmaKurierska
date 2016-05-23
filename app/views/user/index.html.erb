@@ -1,7 +1,3 @@
-<div class="">
-  <h3>Panel sterowania</h3>
-</div>
-<%= link_to('Logout', destroy_client_session_path, :method => :delete) %>
 <% if current_user.is_admin %>
   <%= render(:partial => "admin")%>
 <% elsif current_user.is_dispather %>
