@@ -62,18 +62,17 @@
                             <!-- <h5>Opcje</h5> -->
 
 
-  <% if client_signed_in? %>
-    <%= link_to("Wróć", {:controller => 'client_panel', :action => 'index'}) %>
-  <% elsif user_sined_in? %>
-    <%= link_to("Wróć", {:action => 'index'}) %>
-  <% end %>
-  <%= form_for(:package, :url => {:action => "create"}) do |field|%>
-    <%= render(:partial => "form", :locals => {:field => field})%>
-    <div >
-      <%= submit_tag("Dodaj") %>
-    </div>
-  <% end %>
-
+                              <% if client_signed_in? %>
+                                <%= link_to("Wróć", {:controller => 'client_panel', :action => 'index'}) %>
+                              <% elsif user_sined_in? %>
+                                <%= link_to("Wróć", {:action => 'index'}) %>
+                              <% end %>
+                              <%= form_for(:package, :url => {:action => "create"}) do |field|%>
+                                <%= render(:partial => "form", :locals => {:field => field})%>
+                                <div >
+                                  <%= submit_tag("Dodaj") %>
+                                </div>
+                              <% end %>
 
 
 
