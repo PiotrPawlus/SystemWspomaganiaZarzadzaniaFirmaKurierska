@@ -48,21 +48,19 @@
                 <h5 class="text-center">MENU</h5>
                 <i id="close-sidebar" class="fa fa-times pull-right" aria-hidden="true"></i>
             </div>
-            <div class="sidebar-menu">
-                <ul>
-                  <a href="/"><li><i class="fa fa-home" aria-hidden="true"></i>HOME</li></a>
-                  <a href="/works_time"><li><i class="fa fa-briefcase" aria-hidden="true"></i>Leader Board</li></a>
-                  <a href="/projects"><li><i class="fa fa-certificate" aria-hidden="true"></i>Projects</li></a>
-                  <a href="/tasks"><li><i class="fa fa-certificate" aria-hidden="true"></i>Tasks</li></a>
-                  <a href="/users"><li><i class="fa fa-certificate" aria-hidden="true"></i>Users</li></a>
-                  <a href="/projects"><li><i class="fa fa-certificate" aria-hidden="true"></i>Projects</li></a>
-                  <a href="/tasks"><li><i class="fa fa-certificate" aria-hidden="true"></i>Tasks</li></a>
-                  <a href="/projects"><li><i class="fa fa-certificate" aria-hidden="true"></i>Projects</li></a>
-                  <a href="/tasks"><li><i class="fa fa-certificate" aria-hidden="true"></i>Tasks</li></a>
-                  <a href="/users"><li><i class="fa fa-certificate" aria-hidden="true"></i>Users</li></a>
-                  <a href="/users/edit"><li><i class="fa fa-cog" aria-hidden="true"></i>My account</li></a>
-                </ul>
-            </div>
+            <% if user_signed_in?%>
+							<% if current_user.is_admin %>
+								<%= render(:partial => "/layouts/sidebarAdmin")%>
+							<% elsif current_user.is_dispather %>
+								<%= render(:partial => "/layouts/sidebarDispatcher")%>
+							<% elsif current_user.is_courier %>
+								<%= render(:partial => "/layouts/sidebarCourier")%>
+							<% elsif current_user.is_warehouse %>
+								<%= render(:partial => "/layouts/sidebarWarehouse")%>
+							<% end %>
+						<% elsif client_signed_in? %>
+							<%= render(:partial => "/layouts/sidebarClient")%>
+						<% end %>
         </aside>
 
 		<!-- <p class="notice"><%= notice %></p>
