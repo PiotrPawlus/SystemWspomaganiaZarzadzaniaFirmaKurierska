@@ -1,11 +1,16 @@
-<% if current_user.is_admin %>
-  <%= render(:partial => "admin")%>
-<% elsif current_user.is_dispather %>
-  <%= render(:partial => "dispather")%>
-<% elsif current_user.is_courier %>
-  <%= render(:partial => "courier")%>
-<% elsif current_user.is_warehouse %>
-  <%= render(:partial => "warehouse")%>
+<% if user_signed_in? %>
+  <% if current_user.is_admin %>
+    <%= render(:partial => "admin")%>
+  <% elsif current_user.is_dispather %>
+    <%= render(:partial => "dispather")%>
+  <% elsif current_user.is_courier %>
+    <%= render(:partial => "courier")%>
+  <% elsif current_user.is_warehouse %>
+    <%= render(:partial => "warehouse")%>
+  <% else %>
+    <h4>Proszę czekać na zatwierdzenie danych przez administratora</h4>
+  <% end %>
 <% else %>
-  <h4>Proszę czekać na zatwierdzenie danych przez administratora</h4>
+  <%= link_to("Strona główna", {:controller => "home", :action => "index"}) %>
+  <!-- ERROR 404 -->
 <% end %>
