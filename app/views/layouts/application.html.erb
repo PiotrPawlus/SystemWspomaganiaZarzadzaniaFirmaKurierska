@@ -49,18 +49,18 @@
                 <i id="close-sidebar" class="fa fa-times pull-right" aria-hidden="true"></i>
             </div>
             <% if user_signed_in?%>
-							<% if current_user.is_admin %>
-								<%= render(:partial => "/layouts/sidebarAdmin")%>
-							<% elsif current_user.is_dispather %>
-								<%= render(:partial => "/layouts/sidebarDispatcher")%>
-							<% elsif current_user.is_courier %>
-								<%= render(:partial => "/layouts/sidebarCourier")%>
-							<% elsif current_user.is_warehouse %>
-								<%= render(:partial => "/layouts/sidebarWarehouse")%>
-							<% end %>
-						<% elsif client_signed_in? %>
-							<%= render(:partial => "/layouts/sidebarClient")%>
-						<% end %>
+    			<% if current_user.is_admin %>
+    				<%= render(:partial => "/layouts/sidebarAdmin")%>
+    			<% elsif current_user.is_dispather %>
+    				<%= render(:partial => "/layouts/sidebarDispatcher")%>
+    			<% elsif current_user.is_courier %>
+    				<%= render(:partial => "/layouts/sidebarCourier")%>
+    			<% elsif current_user.is_warehouse %>
+    				<%= render(:partial => "/layouts/sidebarWarehouse")%>
+    			<% end %>
+    		<% elsif client_signed_in? %>
+    			<%= render(:partial => "/layouts/sidebarClient")%>
+    		<% end %>
         </aside>
 
 		<!-- <p class="notice"><%= notice %></p>
