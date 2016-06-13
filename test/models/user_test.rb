@@ -77,16 +77,6 @@ class UserTest < ActiveSupport::TestCase
       assert_not user.save
     end
 
-    test "should not save user without position" do
-      user = build(:user, position: "")
-      assert_not user.save, "Saved the user where position characters count less than 1"
-    end
-
-    test "Should not save user where position cout more than 100" do
-      user = build(:user, position: "PozycjaPracownikaToDziwnaSprawaPozycjaPracownikaToDziwnaSprawaPozycjaPracownikaToDziwnaSprawaPozycjaPracownikaToDziwnaSprawaPozycjaPracownikaToDziwnaSprawa")
-      assert_not user.save, "Saved the user with too long position"
-    end
-
     test "Should save an user as admin" do
       user = create(:is_admin)
       assert User.find(user.id).is_admin, "User is not a administrator"
