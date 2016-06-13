@@ -1,0 +1,19 @@
+<%= link_to "Back", {:action => 'index'} %>
+<table class="" id="">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>E-mail</th>
+    <th>Data urodzenia</th>
+    <th>Zatrudniono</th>
+  </tr>
+  <tr>
+    <th><%= @user.id %></th>
+    <th><%= @user.name %></th>
+    <th><%= @user.surname %></th>
+    <th><%= @user.email %></th>
+    <th><%= @user.birth_date %></th>
+    <th><%= @user.created_at %></th>
+  </tr>
+</table>
