@@ -13,7 +13,7 @@
           ['Do odebrania - płatność przy odbiorze', 'Do odebrania - płatność przy odbiorze']])%>
      </td>
    </tr>
-<% elsif client_signed_in?%>
+<% elsif user_signed_in?%>
   <tr>
     <th> <%= field.label(:status, "Status:")%> </th>
     <td> <%= field.select :status, options_for_select(
