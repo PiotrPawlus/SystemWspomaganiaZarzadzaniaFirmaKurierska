@@ -22,6 +22,49 @@
 	</head>
 	<body class="<%= controller.controller_name%>">
 
+        <header id="index-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <a href="/"><%= image_tag("logo.png", alt: "Logo Kurier") %></a>
+                    <ul class="pull-right">
+                        <li class="pull-left"><a href="/user">Panel administratora</li>
+                        <li class="pull-left">
+                          <% if user_signed_in? %>
+                            <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+                          <% else %>
+                            <%= link_to('Log In', new_user_session_path)  %>
+                          <% end %>
+                        </li>
+                        <li class="pull-left"><i id="open-sidebar" class="fa fa-bars" aria-hidden="true"></i></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </header>
+
+        <div id="background-black" class="background-black-disactive"></div>
+        <aside id="sidebar" class="sidebar-close">
+            <div class="sidebar-header">
+                <h5 class="text-center">MENU</h5>
+                <i id="close-sidebar" class="fa fa-times pull-right" aria-hidden="true"></i>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                  <a href="/"><li><i class="fa fa-home" aria-hidden="true"></i>HOME</li></a>
+                  <a href="/works_time"><li><i class="fa fa-briefcase" aria-hidden="true"></i>Leader Board</li></a>
+                  <a href="/projects"><li><i class="fa fa-certificate" aria-hidden="true"></i>Projects</li></a>
+                  <a href="/tasks"><li><i class="fa fa-certificate" aria-hidden="true"></i>Tasks</li></a>
+                  <a href="/users"><li><i class="fa fa-certificate" aria-hidden="true"></i>Users</li></a>
+                  <a href="/projects"><li><i class="fa fa-certificate" aria-hidden="true"></i>Projects</li></a>
+                  <a href="/tasks"><li><i class="fa fa-certificate" aria-hidden="true"></i>Tasks</li></a>
+                  <a href="/projects"><li><i class="fa fa-certificate" aria-hidden="true"></i>Projects</li></a>
+                  <a href="/tasks"><li><i class="fa fa-certificate" aria-hidden="true"></i>Tasks</li></a>
+                  <a href="/users"><li><i class="fa fa-certificate" aria-hidden="true"></i>Users</li></a>
+                  <a href="/users/edit"><li><i class="fa fa-cog" aria-hidden="true"></i>My account</li></a>
+                </ul>
+            </div>
+        </aside>
+
 		<!-- <p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p> -->
 		<%= yield %>

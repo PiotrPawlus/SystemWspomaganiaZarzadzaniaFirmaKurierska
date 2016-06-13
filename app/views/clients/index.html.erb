@@ -1,127 +1,42 @@
         <div class="wrapper-login">
-
-            <div class="top-sidebar">
-                <div class="pull-left">
-                    <div class="logo-img">
-                        <%= image_tag("logo.png", alt: "Logo Kurier") %>
-                    </div>
-                </div>
-                <div class="pull-right">
-                    <div class="login-name">
-                    </div>
-                </div>
-            </div>
-
             <div class="container-fluid content">
                 <div class="row">
-                    <div class="sidebar">
-                        <div class="sidebar-hide">
-                            <i class="fa fa-bars open" aria-hidden="true"></i>
-                            <p class="icon-desc">Rozwiń panel</p>
-                        </div>
-                        <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-bars " aria-hidden="true"></i>
-                            <p class="icon-desc">Zwiń panel</p>
-                        </div>
-                        <a href="/">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                            <p class="icon-desc">Strona główna</p>
-                          </div>
-                        </a>
-                        <a href="/clients">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            <p class="icon-desc">Klienci</p>
-                          </div>
-                        </a>
-                        <a href="/users">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            <p class="icon-desc">Pracownicy</p>
-                          </div>
-                        </a>
-                        <a href="/orders">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-list-ol" aria-hidden="true"></i>
-                            <p class="icon-desc">Wszystkie zamówienia</p>
-                          </div>
-                        </a>
-                        <a href="/packages">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-archive" aria-hidden="true"></i>
-                            <p class="icon-desc">Paczki</p>
-                          </div>
-                        </a>
-                        <a href="/warehouses">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-building" aria-hidden="true"></i>
-                            <p class="icon-desc">Magazyny</p>
-                          </div>
-                        </a>
-                        <a href="/dispatchers_office">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-building" aria-hidden="true"></i>
-                            <p class="icon-desc">Dyspozytornie</p>
-                          </div>
-                        </a>
-                        <a href="/couriers">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-user-secret" aria-hidden="true"></i>
-                            <p class="icon-desc">Kurierzy</p>
-                          </div>
-                        </a>
-                        <a href="/clients/sign_out">
-                          <div class="sidebar-hide hidesidebar">
-                            <i class="fa fa-sign-out" aria-hidden="true"></i>
-                            <p class="icon-desc">Wyloguj się</p>
-                          </div>
-                        </a>
-                    </div>
                     <div class="content-main col-xs-12">
                         <div class="header col-xs-12 text-center">
                             <h3 style="margin: 25px 0px 30px 60px;">Klienci</h3>
                             <!-- <h5>Witamy w serwisie Koń Kurier</h5> -->
                         </div>
-                        <div class="options newpack col-xs-12" style="height: 75%;">
-                            <!-- <h5>Opcje</h5> -->
-
-                          <div class="">
-                            <% if user_signed_in? and current_user.is_admin %>
-                              <%= link_to("Panel administratora", {:controller => 'user', :action => 'index'}, :class=>"")%>
-
-
-
-
-                              <table>
-                                <tr>
-                                  <th>ID</th>
-                                  <th>Imię</th>
-                                  <th>Nazwisko</th>
-                                  <th>Email</th>
-                                  <th>Utworzono</th>
-                                  <th>Aktualizowano</th>
-                                </tr>
-                                <% @clients.each do |client|%>
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <% if user_signed_in? and current_user.is_admin %>
+                                <%= link_to("Panel administratora", {:controller => 'user', :action => 'index'}, :class=>"")%>
+                                <table>
                                   <tr>
-                                    <th><%= client.id %></th>
-                                    <th><%= client.name %></th>
-                                    <th><%= client.surname %></th>
-                                    <th><%= client.email %></th>
-                                    <th><%= client.created_at %></th>
-                                    <th><%= client.updated_at %></th>
+                                    <th>ID</th>
+                                    <th>Imię</th>
+                                    <th>Nazwisko</th>
+                                    <th>Email</th>
+                                    <th>Utworzono</th>
+                                    <th>Aktualizowano</th>
                                   </tr>
-                                <% end %>
-                              </table>
-                            <% else %>
-                              <h1>Nie jesteś zalogowany</h1>
-                              <%= link_to "Zarejestruj się", new_user_registration_path %> lub <%= link_to "Zaloguj się", new_user_session_path %>
-                            <% end %>
-
+                                  <% @clients.each do |client|%>
+                                    <tr>
+                                      <th><%= client.id %></th>
+                                      <th><%= client.name %></th>
+                                      <th><%= client.surname %></th>
+                                      <th><%= client.email %></th>
+                                      <th><%= client.created_at %></th>
+                                      <th><%= client.updated_at %></th>
+                                    </tr>
+                                  <% end %>
+                                </table>
+                              <% else %>
+                                <h1>Nie jesteś zalogowany</h1>
+                                <%= link_to "Zarejestruj się", new_user_registration_path %> lub <%= link_to "Zaloguj się", new_user_session_path %>
+                              <% end %>
+                            </div>
                           </div>
-
-
-
                         </div>
                     </div>
                 </div>
