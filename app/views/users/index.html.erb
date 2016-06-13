@@ -18,7 +18,6 @@
                 <th>Email</th>
                 <th>Data urodzenia</th>
                 <th>Utworzono</th>
-                <th>Aktualizowano</th>
                 <th>Akcje</th>
               </tr>
               <% @users.each do |user|%>
@@ -27,12 +26,49 @@
                   <th><%= user.name %></th>
                   <th><%= user.surname %></th>
                   <th><%= user.email %></th>
-                  <th><%= user.birth_date %></th>
-                  <th><%= user.created_at %></th>
-                  <th><%= user.updated_at %></th>
-                  <th>
-                    <%= link_to("Pokaż", {:action => 'show', :id => user.id}, :class=>"")%>
-                  </th>
+                  <th><%= user.birth_date.strftime("%m/%d/%y") %></th>
+                  <th><%= user.created_at.strftime("%m/%d/%y %H:%M") %></th>
+                  <% if current_user.id != user.id %>
+                      <% if user.is_admin%>
+                        <th class="pull-right">
+                          <%= link_to("Nie Admin", {:action => 'updateAdmin', :id => user.id}, :class=>"btn btn-raised btn-danger")%>
+                        </th>
+                      <% else %>
+                        <th class="pull-right">
+                          <%= link_to("Admin", {:action => 'updateAdmin', :id => user.id}, :class=>"btn btn-raised btn-danger")%>
+                        </th>
+                      <% end %>
+
+                      <% if user.is_dispather %>
+                        <th class="pull-right">
+                          <%= link_to("Nie Magazynier", {:action => 'updateDispatcher', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
+                        </th>
+                      <% else %>
+                        <th class="pull-right">
+                          <%= link_to("Magazynier", {:action => 'updateDispatcher', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
+                        </th>
+                      <% end %>
+
+                      <% if user.is_courier %>
+                        <th class="pull-right">
+                          <%= link_to("Nie Kurier", {:action => 'updateCourier', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
+                        </th>
+                      <% else %>
+                        <th class="pull-right">
+                          <%= link_to("Kurier", {:action => 'updateCourier', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
+                        </th>
+                      <% end %>
+
+                      <% if user.is_warehouse %>
+                        <th class="pull-right">
+                          <%= link_to("Nie Magazynier", {:action => 'updateWarehouse', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
+                        </th>
+                      <% else %>
+                        <th class="pull-right">
+                          <%= link_to("Magazynier", {:action => 'updateWarehouse', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
+                        </th>
+                      <% end %>
+                  <% end %>
                 </tr>
               <% end %>
             </table>
