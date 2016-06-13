@@ -80,7 +80,7 @@
                     </div>
                     <div class="content-main col-xs-12">
                         <div class="header col-xs-12 text-center">
-                            <h3 style="margin: 25px 0px 30px 60px;">Dodaj nowy magazyn</h3>
+                            <h3 style="margin: 25px 0px 30px 60px;">Nowy magazyn</h3>
                             <!-- <h5>Witamy w serwisie Koń Kurier</h5> -->
                         </div>
                         <div class="options newpack col-xs-12" style="height: 75%;">
@@ -91,7 +91,7 @@
                               <%= link_to("Wróć", {:action => 'index'}) %>
                               <%= form_for(:warehouse, :url => {:action => "create"}) do |field|%>
                                 <%= render(:partial => "form", :locals => {:field => field})%>
-                                <div >
+                                <div>
                                   <%= submit_tag("Dodaj") %>
                                 </div>
                               <% end %>
@@ -104,5 +104,17 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 

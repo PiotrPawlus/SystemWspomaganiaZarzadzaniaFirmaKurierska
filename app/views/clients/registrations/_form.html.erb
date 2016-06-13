@@ -1,16 +1,21 @@
-<div class="field">
-  <%= f.label(:name, "Imię:")%><br />
-  <%= f.text_field :name, autofocus: true %>
+<div class="form-group is-empty">
+    <label for="inputImie" class="col-md-2 control-label">Imie</label>
+    <div class="col-md-10">
+      <%= f.text_field :name, autofocus: true, class: "form-control", id:"inputImie", placeholder: "Imie" %>
+    </div>
 </div>
 
-<div class="f">
-  <%= f.label(:surname, "Nazwisko: ")%><br />
-  <%= f.text_field :surname, autofocus: true %>
+<div class="form-group is-empty">
+    <label for="inputNazwisko" class="col-md-2 control-label">Nazwisko</label>
+    <div class="col-md-10">
+      <%= f.text_field :surname, autofocus: true, class: "form-control", id:"inputNazwisko", placeholder: "Nazwisko" %>
+    </div>
 </div>
 
-<div class="field">
-  <%= f.label(:phone, "Telefon: ")%><br />
-  <%= f.text_field :phone, autofocus: true%>
-</div>
 
-<br />
+<div class="form-group is-empty">
+    <label for="inputTelefon" class="col-md-2 control-label">Telefon</label>
+    <div class="col-md-10">
+      <%= f.text_field :phone, autofocus: true, class: "form-control", id:"inputTelefon", placeholder: "Telefon" %>
+    </div>
+</div>

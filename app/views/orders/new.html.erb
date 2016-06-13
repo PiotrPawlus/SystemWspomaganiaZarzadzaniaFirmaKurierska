@@ -49,15 +49,16 @@
                           </div>
                         </a>
                     </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
                     <div class="content-main col-xs-12">
-                        <div class="header col-xs-12 text-center">
+
+                        <div class="header text-center">
                             <h3 style="margin: 25px 0px 30px 60px;">Dodaj nowe zamówienie</h3>
                             <!-- <h5>Witamy w serwisie Koń Kurier</h5> -->
                         </div>
-                        <div class="options newpack col-xs-12" style="height: 75%;">
-                            <!-- <h5>Opcje</h5> -->
-
-
 
                           <% if client_signed_in? %>
                             <%= link_to("Wróć", {:controller => "client_panel", :action => "index"}) %>
@@ -73,7 +74,6 @@
                           <% end %>
 
 
-                        </div>
                     </div>
                 </div>
             </div>

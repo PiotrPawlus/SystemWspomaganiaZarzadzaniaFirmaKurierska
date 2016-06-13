@@ -10,6 +10,44 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+//= require 'bootstrap'
+//= require 'material'
+//= require 'ripples'
 //= require_tree .
+
+$(document).ready(function() {
+    $('.open').click(function(event) {
+        $('.sidebar').css({
+            width: '320px'
+        });
+        $('.sidebar-hide').addClass('sidebar-open');
+        $('.sidebar-hide').removeClass('sidebar-hide');
+        $('.content-main').css({
+            'padding-left': '320px'
+        });
+    });
+
+    $('.hidesidebar').click(function(event) {
+        $('.sidebar').css({
+            width: '65px'
+        });
+        $('.sidebar-open').addClass('sidebar-hide');
+        $('.sidebar-open').removeClass('sidebar-open');
+        $('.content-main').css({
+            'padding-left': '65px'
+        });
+    });
+    $.material.init();
+
+    if (navigator.userAgent.toLowerCase().indexOf("chrome") >= 0) {
+        $(window).load(function(){
+            $('input:-webkit-autofill').each(function(){
+                var text = $(this).val();
+                var name = $(this).attr('name');
+                $(this).after(this.outerHTML).remove();
+                $('input[name=' + name + ']').val(text);
+            });
+        });
+    }
+
+});

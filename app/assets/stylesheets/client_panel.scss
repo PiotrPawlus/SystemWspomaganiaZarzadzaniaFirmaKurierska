@@ -1,3 +1,17 @@
 // Place all the styles related to the client_panel controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-control {
+    color: rgb(220,220,220);
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background: black;
+}
+input:-webkit-autofill {
+    background: transparent !important;
+}
+.clients-edit {
+  padding: 30px;
+  background: rgba(0,0,0,0.7);
+}
