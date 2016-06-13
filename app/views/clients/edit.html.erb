@@ -1,0 +1,27 @@
+<%= link_to('Back', :action => 'index') %>
+<%= form_for(:task, :url => {:action => "update", :id => @client.id}) do |field|%>
+  <div class="single_task">
+    <p><%= field.label(:name, "Name: ")%></p>
+    <%= field.text_field(:name, :class => '') %>
+  </div>
+  <div class="single_task">
+    <p><%= field.label(:surname, "Same: ")%></p>
+    <%= field.text_field(:surname, :class => '') %>
+  </div>
+
+  <div class="">
+    <p><%= field.label(:email, "Email:") %></p>
+    <%= field.text_field(:email, :class => '') %>
+  </div>
+
+  <div class="">
+    <p><%= field.label(:phone, "Phone:") %></p>
+    <%= field.text_field(:phone, :class => '') %>
+  </div>
+
+  <div class="">
+    <%= submit_tag("Save", class:"") %>
+  </div>
+<% end %>
+
+params.require(:task).permit(:email, :name, :surname, :phone)

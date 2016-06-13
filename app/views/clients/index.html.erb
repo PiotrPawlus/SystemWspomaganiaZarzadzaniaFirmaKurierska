@@ -108,9 +108,7 @@
                                     <th><%= client.created_at %></th>
                                     <th><%= client.updated_at %></th>
                                     <th>
-                                      <%= link_to("Pokaż", {:action => 'show', :id => client.id}, :class=>"")%>
                                       <%= link_to("Edycja", {:action => 'edit', :id => client.id}, :class=>"")%>
-                                      <%= link_to("Usuń", {:action => 'destroy', :id => client.id }, :class=>"")%>
                                     </th>
                                   </tr>
                                 <% end %>
@@ -129,8 +127,3 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
