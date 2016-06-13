@@ -18,7 +18,8 @@
                 <th>Email</th>
                 <th>Data urodzenia</th>
                 <th>Utworzono</th>
-                <th>Akcje</th>
+                <th>Zaktualizowano</th>
+                <th style="text-align: center;">Akcje</th>
               </tr>
               <% @users.each do |user|%>
                 <tr>
@@ -28,46 +29,33 @@
                   <th><%= user.email %></th>
                   <th><%= user.birth_date.strftime("%m/%d/%y") %></th>
                   <th><%= user.created_at.strftime("%m/%d/%y %H:%M") %></th>
+                  <th><%= user.updated_at.strftime("%m/%d/%y %H:%M") %></th>
                   <% if current_user.id != user.id %>
+                    <th style="text-align: right;">
                       <% if user.is_admin%>
-                        <th class="pull-right">
-                          <%= link_to("Nie Admin", {:action => 'updateAdmin', :id => user.id}, :class=>"btn btn-raised btn-danger")%>
-                        </th>
+                          <%= link_to("Nie Admin", {:action => 'updateAdmin', :id => user.id}, :class=>"btn btn-raised no-margin btn-xs btn-danger")%>
                       <% else %>
-                        <th class="pull-right">
-                          <%= link_to("Admin", {:action => 'updateAdmin', :id => user.id}, :class=>"btn btn-raised btn-danger")%>
-                        </th>
+                          <%= link_to("Admin", {:action => 'updateAdmin', :id => user.id}, :class=>"btn btn-raised no-margin btn-xs btn-danger")%>
                       <% end %>
-
                       <% if user.is_dispather %>
-                        <th class="pull-right">
-                          <%= link_to("Nie Magazynier", {:action => 'updateDispatcher', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
-                        </th>
+                          <%= link_to("Nie Dyspozytor", {:action => 'updateDispatcher', :id => user.id}, :class=>"btn btn-raised no-margin btn-xs btn-warning")%>
                       <% else %>
-                        <th class="pull-right">
-                          <%= link_to("Magazynier", {:action => 'updateDispatcher', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
-                        </th>
+                          <%= link_to("Dyspozytor", {:action => 'updateDispatcher', :id => user.id}, :class=>"btn btn-raised no-margin btn-xs btn-warning")%>
                       <% end %>
-
                       <% if user.is_courier %>
-                        <th class="pull-right">
-                          <%= link_to("Nie Kurier", {:action => 'updateCourier', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
-                        </th>
+                          <%= link_to("Nie Kurier", {:action => 'updateCourier', :id => user.id}, :class=>"btn btn-raised no-margin btn-xs btn-warning")%>
                       <% else %>
-                        <th class="pull-right">
-                          <%= link_to("Kurier", {:action => 'updateCourier', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
-                        </th>
+                          <%= link_to("Kurier", {:action => 'updateCourier', :id => user.id}, :class=>"btn btn-raised no-margin btn-xs btn-warning")%>
                       <% end %>
-
                       <% if user.is_warehouse %>
-                        <th class="pull-right">
-                          <%= link_to("Nie Magazynier", {:action => 'updateWarehouse', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
-                        </th>
+                          <%= link_to("Nie Magazynier", {:action => 'updateWarehouse', :id => user.id}, :class=>"btn btn-raised no-margin btn-xs btn-warning")%>
                       <% else %>
-                        <th class="pull-right">
-                          <%= link_to("Magazynier", {:action => 'updateWarehouse', :id => user.id}, :class=>"btn btn-raised btn-warning")%>
-                        </th>
+                          <%= link_to("Magazynier", {:action => 'updateWarehouse', :id => user.id}, :class=>"btn btn-raised no-margin btn-xs btn-warning")%>
                       <% end %>
+                    </th>
+                  <% else %>
+                    <th>
+                    </th>
                   <% end %>
                 </tr>
               <% end %>

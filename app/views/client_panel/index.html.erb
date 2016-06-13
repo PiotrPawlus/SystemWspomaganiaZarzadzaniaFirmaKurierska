@@ -1,70 +1,76 @@
         <div class="wrapper-login">
-
-            <div class="container-fluid content">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-xs-12 text-center">
+                        <h3>Panel klienta</h3>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="content-main col-xs-12">
-                        <div class="header col-xs-12">
-                            <h3>Logowanie pomyślne</h3>
-                            <h5>Witamy w serwisie Koń Kurier</h5>
-                        </div>
-                        <div class="options col-xs-12">
-                            <h5></h5>
-                            <ul class="panel-option col-xs-12">
-
-                                <li class="panel-option-single col-xs-2">
-                                    <div class="inner">
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                        <a href="clients/edit">Edytuj dane</a>
-                                    </div>
-                                </li>
-                                <li class="panel-option-single col-xs-2">
-                                    <div class="inner">
-                                        <i class="fa fa-archive" aria-hidden="true"></i>
-                                        <a href="orders/new">Nadaj paczkę</a>
-                                    </div>
-                                </li>
-                                <li class="panel-option-single col-xs-2">
-                                    <div class="inner">
-                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                        <a href="/clients/sign_out">Wyloguj się</a>
-                                    </div>
-                                </li>
-
-                            </ul>
-                          <div class="col-xs-12">
-                          <div class="">
-                            <!-- <h1>Użytkownicy</h1> -->
+                        <div class="options no-padding">
                             <% if client_signed_in? %>
-                                <!-- <%= link_to('Logout', destroy_client_session_path, :method => :delete) %> -->
-                              <div class="">
-                                  <h5>Moje Paczki</h5>
-<!--                                   <%= link_to("Nadaj paczke", {:controller => 'orders', :action => 'new'}, :class=>"")%> -->
-
-                                  <div class="">
-                                    <% @orders.each do |order| %>
-                                      <% if order.client_id == current_client.id %>
-                                        <p>
-                                          Numer zamówienia: <%=order.order_number %>
-                                          Status: <%=order.status%>
-                                        </p>
-                                        <br>
-                                      <% end %>
+                              <div class="row">
+                                <ul class="panel-option col-xs-12">
+                                  <li class="panel-option-single col-xs-3">
+                                      <a href="/">
+                                          <div class="inner">
+                                              <i class="fa fa-home" aria-hidden="true"></i>
+                                              Strona główna
+                                          </div>
+                                      </a>
+                                  </li>
+                                  <li class="panel-option-single col-xs-3">
+                                    <a href="orders/new">
+                                      <div class="inner">
+                                          <i class="fa fa-archive" aria-hidden="true"></i>
+                                          Nadaj paczkę
+                                      </div>
+                                    </a>
+                                  </li>
+                                  <li class="panel-option-single col-xs-3">
+                                    <a href="clients/edit">
+                                        <div class="inner">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            Edytuj dane
+                                        </div>
+                                      </a>
+                                  </li>
+                                  <li class="panel-option-single col-xs-3">
+                                    <a href="/clients/sign_out">
+                                      <div class="inner">
+                                          <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                          Wyloguj się
+                                      </div>
+                                    </a>
+                                  </li>
+                              </ul>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <h5>Moje Paczki</h5>
+                                <%= link_to("Nadaj paczke", {:controller => 'orders', :action => 'new'}, :class=>"btn btn-raised btn-success btn-sm")%>
+                                  <table class="table table-striped table-hover" style="margin-top: 20px; ">
+                                      <tr style="color: black;">
+                                        <th class="text-center">Numer zamówienia</th>
+                                        <th class="text-center">Status</th>
+                                      </tr>
+                                      <% @orders.each do |order| %>
+                                        <% if order.client_id == current_client.id %>
+                                        <tr>
+                                         <td><%=order.order_number %></td>
+                                         <td><%=order.status%></td>
+                                        </tr>
+                                        <% end %>
                                     <% end %>
-                                  </div>
-
+                                  </table>
                               </div>
-
+                            </div>
                             <% else %>
                               <h1>Nie jesteś zalogowany</h1>
                               <%= link_to "Zarejestruj się", new_client_registration_path %> lub <%= link_to "Zaloguj się", new_client_session_path %>
                             <% end %>
-
-                          </div>
                         </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
