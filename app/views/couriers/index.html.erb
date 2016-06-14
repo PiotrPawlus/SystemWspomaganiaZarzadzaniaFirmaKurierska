@@ -30,8 +30,8 @@
                   <th><%= courier.id %></th>
                   <th><%= courier.name %></th>
                   <th><%= courier.precinct %></th>
-                  <th><%= courier.created_at %></th>
-                  <th><%= courier.updated_at %></th>
+                  <th><%= courier.created_at.strftime("%m/%d/%y %H:%M") %></th>
+                  <th><%= courier.updated_at.strftime("%m/%d/%y %H:%M") %></th>
                   <% if current_user.is_admin %>
                     <th>
                       <%= link_to("Pokaż", {:action => 'show', :id => courier.id}, :class=>"")%>

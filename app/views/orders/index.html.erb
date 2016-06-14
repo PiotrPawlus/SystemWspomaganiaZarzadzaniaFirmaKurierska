@@ -32,9 +32,9 @@
                   <th><%= order.updated_at %></th>
                   <% if current_user.is_admin %>
                     <th>
-                      <%= link_to("Pokaż", {:action => 'show', :id => order.id}, :class=>"")%>
-                      <%= link_to("Edycja", {:action => 'edit', :id => order.id}, :class=>"")%>
-                      <%= link_to("Usuń", {:action => 'destroy', :id => order.id }, :class=>"")%>
+                      <%= link_to("Pokaż", {:action => 'show', :id => order.id}, :class=>"btn btn-raised btn-default")%>
+                      <%= link_to("Edycja", {:action => 'edit', :id => order.id}, :class=>"btn btn-raised btn-default")%>
+                      <%= link_to("Usuń", {:action => 'destroy', :id => order.id }, :class=>"btn btn-raised btn-default")%>
                     </th>
                   <% end %>
                 </tr>

@@ -35,8 +35,8 @@
                    <%= warehouse.house_number%> <%= warehouse.postcode %></th>
                 <% end %>
                 <th><%= warehouse.capacity %></th>
-                <th><%= warehouse.created_at %></th>
-                <th><%= warehouse.updated_at %></th>
+                <th><%= warehouse.created_at.strftime("%m/%d/%y %H:%M") %></th>
+                <th><%= warehouse.updated_at.strftime("%m/%d/%y %H:%M") %></th>
                 <th>
                   <%= link_to("Pokaż", {:action => 'show', :id => warehouse.id}, :class=>"btn btn-raised btn-default")%>
                   <%= link_to("Edycja", {:action => 'edit', :id => warehouse.id}, :class=>"btn btn-raised btn-default")%>

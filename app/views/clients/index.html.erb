@@ -24,8 +24,8 @@
                 <th><%= client.name %></th>
                 <th><%= client.surname %></th>
                 <th><%= client.email %></th>
-                <th><%= client.created_at %></th>
-                <th><%= client.updated_at %></th>
+                <th><%= client.created_at.strftime("%m/%d/%y %H:%M") %></th>
+                <th><%= client.updated_at.strftime("%m/%d/%y %H:%M") %></th>
               </tr>
             <% end %>
           </table>

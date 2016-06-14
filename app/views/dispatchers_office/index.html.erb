@@ -34,12 +34,12 @@
                       <th><%= dispatcher.city %>, <%= dispatcher.street %><br>
                        <%= dispatcher.house_number%> <%= dispatcher.postcode %></th>
                     <% end %>
-                    <th><%= dispatcher.created_at %></th>
-                    <th><%= dispatcher.updated_at %></th>
+                    <th><%= dispatcher.created_at.strftime("%m/%d/%y %H:%M") %></th>
+                    <th><%= dispatcher.updated_at.strftime("%m/%d/%y %H:%M") %></th>
                     <th>
-                      <%= link_to("Pokaż", {:action => 'show', :id => dispatcher.id}, :class=>"")%>
-                      <%= link_to("Edycja", {:action => 'edit', :id => dispatcher.id}, :class=>"")%>
-                      <%= link_to("Usuń", {:action => 'destroy', :id => dispatcher.id }, :class=>"")%>
+                      <%= link_to("Pokaż", {:action => 'show', :id => dispatcher.id}, :class=>"btn btn-raised btn-default")%>
+                      <%= link_to("Edycja", {:action => 'edit', :id => dispatcher.id}, :class=>"btn btn-raised btn-default")%>
+                      <%= link_to("Usuń", {:action => 'destroy', :id => dispatcher.id }, :class=>"btn btn-raised btn-default")%>
                     </th>
                   </tr>
                 <% end %>

@@ -25,13 +25,13 @@
                 <th><%= package.id %></th>
                 <th><%= package.weight %></th>
                 <th><%= package.cost %></th>
-                <th><%= package.created_at %></th>
-                <th><%= package.updated_at %></th>
+                <th><%= package.created_at.strftime("%m/%d/%y %H:%M") %></th>
+                <th><%= package.updated_at.strftime("%m/%d/%y %H:%M") %></th>
                 <th>
-                  <%= link_to("Pokaż", {:action => 'show', :id => package.id}, :class=>"")%>
-                  <%= link_to("Edycja", {:action => 'edit', :id => package.id}, :class=>"")%>
+                  <%= link_to("Pokaż", {:action => 'show', :id => package.id}, :class=>"btn btn-raised btn-default")%>
+                  <%= link_to("Edycja", {:action => 'edit', :id => package.id}, :class=>"btn btn-raised btn-default")%>
                   <% if current_user.is_admin or current_user.is_dispather %>
-                    <%= link_to("Usuń", {:action => 'destroy', :id => package.id }, :class=>"")%>
+                    <%= link_to("Usuń", {:action => 'destroy', :id => package.id }, :class=>"btn btn-raised btn-default")%>
                   <% end %>
 
                 </th>
