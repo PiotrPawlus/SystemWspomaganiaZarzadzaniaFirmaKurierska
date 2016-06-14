@@ -28,9 +28,11 @@
                     <a href="/"><%= image_tag("logo.png", alt: "Logo Kurier") %></a>
                     <ul class="pull-right">
 											<% if user_signed_in? %>
-                        <li class="pull-left"><a href="/user">Panel Administratora</li>
+												<li class="pull-left" ><a style="color: red;">Witaj <%= current_user.name%></a></li>
+	                      <li class="pull-left"><a href="/user">Panel Administratora</a></li>
 											<% elsif client_signed_in? %>
-												<li class="pull-left"><a href="/client_panel">Panel Klienta</li>
+												<li class="pull-left" ><a style="color: red;">Witaj <%= current_client.name%></a></li>
+												<li class="pull-left"><a href="/client_panel">Panel Klienta</a></li>
 											<% else %>
 												<li class="pull-left"></li>
 											<% end %>
