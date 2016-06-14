@@ -1,19 +1,22 @@
-<div class="field">
-  <%= f.label(:name, "Imię:")%><br />
-  <%= f.text_field :name, autofocus: true %>
+<div class="form-group is-empty">
+    <label for="inputImie" class="col-md-2 control-label">Imie</label>
+    <div class="col-md-10">
+      <%= f.text_field :name, autofocus: true, class: "form-control", id:"inputImie", placeholder: "Imie" %>
+    </div>
 </div>
 
-<div class="f">
-  <%= f.label(:surname, "Nazwisko: ")%><br />
-  <%= f.text_field :surname, autofocus: true %>
-</div>
-
-<div class="field">
-  <% year = Date.today.year %>
-  <%= f.label(:birth_date, "Data urodzenia: ")%><br />
-  <%= f.date_select(:birth_date, order: [:day, :month, :year], start_year: 1900, end_year: year)%>
+<div class="form-group is-empty">
+    <label for="inputNazwisko" class="col-md-2 control-label">Nazwisko</label>
+    <div class="col-md-10">
+      <%= f.text_field :surname, autofocus: true, class: "form-control", id:"inputNazwisko", placeholder: "Nazwisko" %>
+    </div>
 </div>
 
 
-
-<br />
+<div class="form-group is-empty">
+    <label for="inputTelefon" class="col-md-2 control-label">Data urodzenia</label>
+    <div class="col-md-10" style="text-align: left; margin-top: 10px;">
+        <% year = Date.today.year %>
+        <%= f.date_select(:birth_date, order: [:day, :month, :year], start_year: 1900, end_year: year)%>
+    </div>
+</div>

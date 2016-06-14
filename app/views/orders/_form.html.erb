@@ -1,22 +1,22 @@
 <%= error(@order) %>
 
-<table>
- <tr>
-   <th> <%= field.label(:order_number, "Numer zamówienia:")%> </th>
-   <th> <%= field.label(:order_number, $orderNumber)%> </th>
+<table class="table" style="margin-top: 20px;">
+ <tr style="color: black;">
+   <th style="text-align: right;"> <%= field.label(:order_number, "Numer zamówienia:")%> </th>
+   <th style="text-align: center;"> <%= field.label(:order_number, $orderNumber)%> </th>
  </tr>
  <% if client_signed_in?%>
    <tr>
-     <th> <%= field.label(:status, "Status:")%> </th>
-     <td> <%= field.select :status, options_for_select(
+     <th style="text-align: right;"> <%= field.label(:status, "Status:")%> </th>
+     <td style="text-align: center;"> <%= field.select :status, options_for_select(
           [['Do odebrania - przedpłata', 'Do odebrania - przedpłata'],
           ['Do odebrania - płatność przy odbiorze', 'Do odebrania - płatność przy odbiorze']])%>
      </td>
    </tr>
 <% elsif user_signed_in?%>
   <tr>
-    <th> <%= field.label(:status, "Status:")%> </th>
-    <td> <%= field.select :status, options_for_select(
+    <th style="text-align: right;"> <%= field.label(:status, "Status:")%> </th>
+    <td style="text-align: center;"> <%= field.select :status, options_for_select(
          [['Do odebrania - przedpłata', 'Do odebrania - przedpłata'],
          ['Do odebrania - płatność przy odbiorze', 'Do odebrania - płatność przy odbiorze'],
          ['Przyjęte przez kuriera', 'Przyjęte przez kuriera'],
@@ -24,7 +24,8 @@
          ['Wydane z magazynu', 'Wydane z magazynu'],
          ['Dostarczone do odbiorcy', 'Dostarczone do odbiorcy']
          ])%>
-    </td>  </tr>
+    </td>
+  </tr>
  <%end %>
 
 </table>

@@ -1,34 +1,23 @@
-        <div class="wrapper-login">
-            <div class="container-fluid content">
-                <div class="row">
+<div class="wrapper-login">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Dodaj nowe zamówienie</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 bg-all">
+        <% if client_signed_in? %>
+          <a class="btn btn-raised btn-default" href="/client_panel">Panel klienta</a>
+        <% elsif user_signed_in? %>
+          <%= link_to("Wróć", {:action => 'index'}, :class=>"btn btn-raised btn-default") %>
+        <% end %>
 
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="content-main col-xs-12">
-
-                        <div class="header text-center">
-                            <h3 style="margin: 25px 0px 30px 60px;">Dodaj nowe zamówienie</h3>
-                            <!-- <h5>Witamy w serwisie Koń Kurier</h5> -->
-                        </div>
-
-                          <% if client_signed_in? %>
-                            <%= link_to("Wróć", {:controller => "client_panel", :action => "index"}) %>
-                          <% elsif user_signed_in? %>
-                            <%= link_to("Wróć", {:action => 'index'}) %>
-                          <% end %>
-
-                          <%= form_for(:order, :url => {:action => "create"}) do |field|%>
-                            <%= render(:partial => "form", :locals => {:field => field})%>
-                            <div >
-                              <%= submit_tag("Dodaj") %>
-                            </div>
-                          <% end %>
-
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <%= form_for(:order, :url => {:action => "create"}) do |field|%>
+          <%= render(:partial => "form", :locals => {:field => field})%>
+          <%= submit_tag("Dodaj", :class=>"btn btn-raised btn-success") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
