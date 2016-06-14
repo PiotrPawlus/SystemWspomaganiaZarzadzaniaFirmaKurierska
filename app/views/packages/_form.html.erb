@@ -85,6 +85,10 @@
 <table>
   <tr>
     <th> <%= field.label(:cost, "Koszt: ")%> </th>
-    <td> <%= field.text_field(:cost)%></td>
+    <td> <%= field.select :cost, options_for_select(
+         [
+           ['15 zł', 15],
+           ['20 zł', 20],
+         ])%>
   </tr>
 </table>

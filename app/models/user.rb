@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   belongs_to :dispatcher_office
   belongs_to :courier
 
-  validates :email, :password, :password_confirmation, :name, :surname, :birth_date, presence: true
+  validates :email, :name, :surname, :birth_date, presence: true
 
   validates :email,
           email: true,
