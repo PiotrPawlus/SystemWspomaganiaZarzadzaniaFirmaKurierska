@@ -21,7 +21,7 @@
               <th>Pojemność</th>
               <th>Utworzono</th>
               <th>Aktualizowano</th>
-              <th>Akcje</th>
+              <th style="text-align: center;">Akcje</th>
             </tr>
             <% @warehouses.each do |warehouse|%>
               <tr>
@@ -37,10 +37,10 @@
                 <th><%= warehouse.capacity %></th>
                 <th><%= warehouse.created_at.strftime("%m/%d/%y %H:%M") %></th>
                 <th><%= warehouse.updated_at.strftime("%m/%d/%y %H:%M") %></th>
-                <th>
-                  <%= link_to("Pokaż", {:action => 'show', :id => warehouse.id}, :class=>"btn btn-raised btn-default")%>
-                  <%= link_to("Edycja", {:action => 'edit', :id => warehouse.id}, :class=>"btn btn-raised btn-default")%>
-                  <%= link_to("Usuń", {:action => 'destroy', :id => warehouse.id }, :class=>"btn btn-raised btn-default")%>
+                <th style="text-align: right;">
+                  <%= link_to("Pokaż", {:action => 'show', :id => warehouse.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                  <%= link_to("Edycja", {:action => 'edit', :id => warehouse.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                  <%= link_to("Usuń", {:action => 'destroy', :id => warehouse.id }, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
                 </th>
               </tr>
             <% end %>

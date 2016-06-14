@@ -21,7 +21,7 @@
                   <th>Adres</th>
                   <th>Utworzono</th>
                   <th>Aktualizowano</th>
-                  <th>Akcje</th>
+                  <th style="text-align: center;">Akcje</th>
                 </tr>
                 <% @dispatchers.each do |dispatcher|%>
                   <tr>
@@ -36,10 +36,10 @@
                     <% end %>
                     <th><%= dispatcher.created_at.strftime("%m/%d/%y %H:%M") %></th>
                     <th><%= dispatcher.updated_at.strftime("%m/%d/%y %H:%M") %></th>
-                    <th>
-                      <%= link_to("Pokaż", {:action => 'show', :id => dispatcher.id}, :class=>"btn btn-raised btn-default")%>
-                      <%= link_to("Edycja", {:action => 'edit', :id => dispatcher.id}, :class=>"btn btn-raised btn-default")%>
-                      <%= link_to("Usuń", {:action => 'destroy', :id => dispatcher.id }, :class=>"btn btn-raised btn-default")%>
+                    <th style="text-align: right;">
+                      <%= link_to("Pokaż", {:action => 'show', :id => dispatcher.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                      <%= link_to("Edycja", {:action => 'edit', :id => dispatcher.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                      <%= link_to("Usuń", {:action => 'destroy', :id => dispatcher.id }, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
                     </th>
                   </tr>
                 <% end %>

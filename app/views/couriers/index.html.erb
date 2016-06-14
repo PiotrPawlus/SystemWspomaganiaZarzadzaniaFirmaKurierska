@@ -22,7 +22,7 @@
                 <th>Utworzono</th>
                 <th>Aktualizowano</th>
                 <% if current_user.is_admin %>
-                  <th>Akcje</th>
+                  <th style="text-align: center;">Akcje</th>
                 <% end %>
               </tr>
               <% @couriers.each do |courier|%>
@@ -33,10 +33,10 @@
                   <th><%= courier.created_at.strftime("%m/%d/%y %H:%M") %></th>
                   <th><%= courier.updated_at.strftime("%m/%d/%y %H:%M") %></th>
                   <% if current_user.is_admin %>
-                    <th>
-                      <%= link_to("Pokaż", {:action => 'show', :id => courier.id}, :class=>"")%>
-                      <%= link_to("Edycja", {:action => 'edit', :id => courier.id}, :class=>"")%>
-                      <%= link_to("Usuń", {:action => 'destroy', :id => courier.id }, :class=>"")%>
+                    <th style="text-align: right;">
+                      <%= link_to("Pokaż", {:action => 'show', :id => courier.id},:class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                      <%= link_to("Edycja", {:action => 'edit', :id => courier.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                      <%= link_to("Usuń", {:action => 'destroy', :id => courier.id }, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
                     </th>
                   <% end %>
                 </tr>

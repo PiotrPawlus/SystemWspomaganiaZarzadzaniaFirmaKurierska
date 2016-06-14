@@ -18,7 +18,7 @@
               <th>Koszt</th>
               <th>Utworzono</th>
               <th>Aktualizowano</th>
-              <th>Akcje</th>
+              <th style="text-align: center;">Akcje</th>
             </tr>
             <% @packages.each do |package|%>
               <tr>
@@ -27,11 +27,11 @@
                 <th><%= package.cost %></th>
                 <th><%= package.created_at.strftime("%m/%d/%y %H:%M") %></th>
                 <th><%= package.updated_at.strftime("%m/%d/%y %H:%M") %></th>
-                <th>
-                  <%= link_to("Pokaż", {:action => 'show', :id => package.id}, :class=>"btn btn-raised btn-default")%>
-                  <%= link_to("Edycja", {:action => 'edit', :id => package.id}, :class=>"btn btn-raised btn-default")%>
+                <th style="text-align: right;">
+                  <%= link_to("Pokaż", {:action => 'show', :id => package.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                  <%= link_to("Edycja", {:action => 'edit', :id => package.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
                   <% if current_user.is_admin or current_user.is_dispather %>
-                    <%= link_to("Usuń", {:action => 'destroy', :id => package.id }, :class=>"btn btn-raised btn-default")%>
+                    <%= link_to("Usuń", {:action => 'destroy', :id => package.id }, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
                   <% end %>
 
                 </th>

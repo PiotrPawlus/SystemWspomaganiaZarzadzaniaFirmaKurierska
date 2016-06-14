@@ -20,7 +20,7 @@
                 <th>Utworzono</th>
                 <th>Aktualizowano</th>
                 <% if current_user.is_admin %>
-                 <th>Akcje</th>
+                  <th style="text-align: center;">Akcje</th>
                 <% end %>
               </tr>
               <% @orders.each do |order|%>
@@ -31,10 +31,10 @@
                   <th><%= order.created_at.strftime("%m/%d/%y %H:%M") %></th>
                   <th><%= order.updated_at.strftime("%m/%d/%y %H:%M") %></th>
                   <% if current_user.is_admin %>
-                    <th>
-                      <%= link_to("Pokaż", {:action => 'show', :id => order.id}, :class=>"btn btn-raised btn-default")%>
-                      <%= link_to("Edycja", {:action => 'edit', :id => order.id}, :class=>"btn btn-raised btn-default")%>
-                      <%= link_to("Usuń", {:action => 'destroy', :id => order.id }, :class=>"btn btn-raised btn-default")%>
+                    <th style="text-align: right;">
+                      <%= link_to("Pokaż", {:action => 'show', :id => order.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                      <%= link_to("Edycja", {:action => 'edit', :id => order.id}, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
+                      <%= link_to("Usuń", {:action => 'destroy', :id => order.id }, :class=>"btn btn-raised no-margin btn-xs btn-default")%>
                     </th>
                   <% end %>
                 </tr>
